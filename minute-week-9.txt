@@ -1,0 +1,3 @@
+Let's finish and talk about the project plan
+The leaving event app has to be improved, easier way of checking of what they rent and the event-account. A color checking image.
+We check with different colors who has a camping spot and who doesn't.

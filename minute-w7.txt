@@ -1,0 +1,17 @@
+Linh bui candies
+Registration for the workshop, full is full.
+KEEP THE WORKSHOPS SIMPLE!! - borrow the hardware from the computer doctor
+Really good website.
+First html cause it is simple and some things should be php but it's still good for this.
+
+Setup should provide the information how everything works
+Gotta do the database boays
+After buying a ticket the visitor will receive an e=mail with a barcode that they will have to bring at the entrance. Then the visitor will receive a bracelet with a chip code and the barcode and chipcode will be connected
+
+At the entrance we don't need balance or id. What we need is the barcode and then the chipcode. We have to be able to check carefully the barcodes: already/not yet checked in the event!!!(yes and no app to let them in)
+
+What we have clear we write in the SETUP DOCUMENT(LIIS)!!!!!!!!!!!!!!!!!!
+
+An administration place where you can solve the problems
+
+Quit button at the shop and message.

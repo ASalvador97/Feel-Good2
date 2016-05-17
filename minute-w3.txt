@@ -1,0 +1,17 @@
+date:01/03/2016   time:11:35-12:35
+FeelGood team
+Discussion with Mr. Bert-some information regarding the last meeting
+                        -diving better the tasks
+                        -what do we bring new and the progress
+                        -the project plan(the draft one)=>improvements and proper form of the final one
+
+Discussion with Mr. George-questions for Mr. George
+                          -knowing better our client
+                          -identification method
+                          -paying method(alternative ways for buying a ticket and for putting money on the even-account)
+                          -our limits and bounderies regarding this project
+                          -client wants statistics regarding the sold products and visitors
+                          -precisely information on website/applicatitons:
+                                 +Rules in website (etc don’t bring food into the festival)
+                                 +time, performers, selling tickets options should/must be on the website
+                                 +taking care of the logfiles (need to be very detailed, for example every action which was taken should be recorded)

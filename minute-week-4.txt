@@ -1,0 +1,41 @@
+8/3/2016 | 9:35 - 10:25
+ProP - Group H - Week 4 minute
+*****Discussion about the project plan*****
+-About client:
++need to make it shorter and more concreted
+
+-current situation:
++is understood as a mark for the project team to turn it into a better situation
++how / why the client asks us to do the project
++"database" not "database design"
+
+-deliverables:
++what we deliver in the project goals should be moved to deliverables
+
+-non-deliverables:
++the data of the event
++we dont deliver the hardware for the applications
+
+-constraints:
++the applications only works for Windows operating system
+
+-risks:
++need to have some extra items for all the necessary equipments -> risk related to money -> high/low level?
+
+-project timeline:
++fix the table, switch from rows to columns
+
+-delivery:
++have a look at all the delivery, which should be exactly the same as deliverables
+
+
+
+*****about dividing the task*****
++websites: Liis and Alexandru
++applications: Alexandre and Linh
++bonus task: discuss about the method: barcode/qr code/armbrace -> do a research about how everything works with the chosen method (like how it physically works, or related to coding,...) -> may come up with a different method which is believed to be the better one comparing to the old methods
+
+
+
+*****about the agenda*****
++put a point: "Questions" (questions from any member of the group so they can be discussed at home / next week meeting)
