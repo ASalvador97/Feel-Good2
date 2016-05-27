@@ -1,0 +1,5 @@
+1.Carefully sql statements.
+2.Visitor object
+3.Bigger layout
+4.Selected item in the lending and shop
+5.candies by me,alex and Liis
