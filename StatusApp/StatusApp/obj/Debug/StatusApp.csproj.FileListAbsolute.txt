@@ -1,0 +1,9 @@
+E:\Fontys\ProP\StatusApp\StatusApp\bin\Debug\StatusApp.exe
+E:\Fontys\ProP\StatusApp\StatusApp\bin\Debug\StatusApp.pdb
+E:\Fontys\ProP\StatusApp\StatusApp\bin\Debug\MySql.Data.dll
+E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.csprojResolveAssemblyReference.cache
+E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.Form1.resources
+E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.Properties.Resources.resources
+E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.csproj.GenerateResource.Cache
+E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.exe
+E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.pdb
