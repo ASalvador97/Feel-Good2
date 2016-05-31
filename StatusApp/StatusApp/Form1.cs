@@ -18,35 +18,64 @@ namespace StatusApp
             InitializeComponent();
             gen = new General();
             client = new Client_Info();
-
-            tbwhowillvisit.Text = gen.NumberOfVisitors().ToString();
-
-            tbentered.Text = gen.NumberOfVisitorsEntered().ToString();
-
-            tbnotentered.Text = (Convert.ToInt32(tbwhowillvisit.Text) - Convert.ToInt32(tbentered.Text)).ToString();
-
-            tbwholeft.Text = gen.NumberOfVisitorsLeft().ToString();
-
-            tbtotalamount.Text = gen.TotalAmountOfEventAccounts().ToString();
         }
 
         private void btnLoadAllStudents_Click(object sender, EventArgs e)
         {
-            Visitor v=client.VisitorInfo(tbemail.Text);
-            listboxStatusAndHistory.Items.Add("PERSONAL INFORMATION:");
-            listboxStatusAndHistory.Items.Add("First Name: "+v.Fname);
-            listboxStatusAndHistory.Items.Add("Last Name: "+v.Lname);
-            listboxStatusAndHistory.Items.Add("Email: "+v.Email);
-            listboxStatusAndHistory.Items.Add("Gender: "+v.Gender);
-            listboxStatusAndHistory.Items.Add("Phone: "+v.Phone);
-            listboxStatusAndHistory.Items.Add("Country: "+v.Country);
-            listboxStatusAndHistory.Items.Add("City: "+v.City);
-            listboxStatusAndHistory.Items.Add("Balance left: "+v.Balance_left);
+            this.DisplayingPersonalData(tbemail.Text);
+        }
+        public void DisplayingPersonalData(String code)
+        {
+             try
+            {
+                listboxStatusAndHistory.Items.Clear();
 
-            listboxStatusAndHistory.Items.Add("CAMPING INFORMATION:\n");
+                Visitor v = client.VisitorInfo(code);
+                listboxStatusAndHistory.Items.Add("PERSONAL INFORMATION:");
+                listboxStatusAndHistory.Items.Add("First Name: " + v.Fname);
+                listboxStatusAndHistory.Items.Add("Last Name: " + v.Lname);
+                listboxStatusAndHistory.Items.Add("Email: " + v.Email);
+                listboxStatusAndHistory.Items.Add("Gender: " + v.Gender);
+                listboxStatusAndHistory.Items.Add("Phone: " + v.Phone);
+                listboxStatusAndHistory.Items.Add("Country: " + v.Country);
+                listboxStatusAndHistory.Items.Add("City: " + v.City);
+                listboxStatusAndHistory.Items.Add("Balance left: " + v.Balance_left);
 
-            foreach (String str in client.CampingInfo(tbemail.Text))
-                listboxStatusAndHistory.Items.Add(str);
+                listboxStatusAndHistory.Items.Add("");
+
+                listboxStatusAndHistory.Items.Add("CAMPING INFORMATION:");
+                foreach (String str in client.CampingInfo(tbemail.Text))
+                    listboxStatusAndHistory.Items.Add(str);
+            }
+            catch(NullReferenceException)
+            {
+                listboxStatusAndHistory.Items.Clear();
+                listboxStatusAndHistory.Items.Add("There is no such person!!!!!!!!!!");
+            }
+
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //general
+            int numberOfVisitors;
+            int numberOfEntered;
+            int numberOfLeft;
+            double totalbalance, totalprofit;
+
+            gen.GeneralStatistics(out numberOfVisitors, out numberOfEntered, out numberOfLeft);
+
+
+            tbwhowillvisit.Text = numberOfVisitors.ToString();
+            tbentered.Text = numberOfEntered.ToString();
+            tbnotentered.Text = (numberOfVisitors - numberOfEntered).ToString();
+            tbwholeft.Text = numberOfLeft.ToString();
+
+            gen.TotalAmountOfEventAccounts(out totalbalance,out totalprofit);
+            tbtotalamount.Text = totalbalance.ToString();
+            tbmoney.Text = totalprofit.ToString();
+
+            //camping availability
+
         }
 
     }

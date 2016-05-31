@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menu = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tbnotentered = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbmoney = new System.Windows.Forms.TextBox();
             this.tbtotalamount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.listboxStatusAndHistory = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -71,7 +73,7 @@
             this.tabPage1.Controls.Add(this.tbnotentered);
             this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.tbmoney);
             this.tabPage1.Controls.Add(this.tbtotalamount);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label2);
@@ -116,12 +118,12 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Number of visitors who entered the event:";
             // 
-            // textBox2
+            // tbmoney
             // 
-            this.textBox2.Location = new System.Drawing.Point(540, 347);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 26);
-            this.textBox2.TabIndex = 22;
+            this.tbmoney.Location = new System.Drawing.Point(540, 348);
+            this.tbmoney.Name = "tbmoney";
+            this.tbmoney.Size = new System.Drawing.Size(121, 26);
+            this.tbmoney.TabIndex = 22;
             // 
             // tbtotalamount
             // 
@@ -134,12 +136,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(188, 343);
+            this.label5.Location = new System.Drawing.Point(16, 344);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(345, 29);
+            this.label5.Size = new System.Drawing.Size(517, 29);
             this.label5.TabIndex = 20;
-            this.label5.Text = "Total amount of money earned:";
+            this.label5.Text = "Total of money earned from shops and lending:";
             // 
             // label2
             // 
@@ -274,6 +276,11 @@
             this.tabPage4.Text = "Shop Revenue";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -304,7 +311,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbmoney;
         private System.Windows.Forms.TextBox tbtotalamount;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -314,6 +321,7 @@
         private System.Windows.Forms.TextBox tbemail;
         private System.Windows.Forms.Button btnLoadAllStudents;
         private System.Windows.Forms.ListBox listboxStatusAndHistory;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

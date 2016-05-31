@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Windows.Forms;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -24,22 +24,34 @@ namespace StatusApp
             connection = new MySqlConnection(connectionInfo);
         }
 
-        public int NumberOfVisitors()
+        public void GeneralStatistics(out int numberOfVisitors,out int numberOfEntered,out int numberOfLeft)
         {
             String sql = "SELECT COUNT(*) FROM paid_visitor";
-            MySqlCommand command = new MySqlCommand(sql, connection);
+            MySqlCommand commandNrOfVisitors = new MySqlCommand(sql, connection);
 
-            int number = 0;
+            String sql1="SELECT COUNT(*) FROM entered_visitor";
+            MySqlCommand commandNrOfEntered = new MySqlCommand(sql1, connection);
+
+            String sql2 = "SELECT COUNT(*) FROM entered_visitor WHERE has_left_event='Y'";
+            MySqlCommand commandNrOfLeft = new MySqlCommand(sql2, connection);
+
+            numberOfVisitors = -1;
+            numberOfEntered = -1;
+            numberOfLeft = -1;
 
             try
             {
                 connection.Open();
-                number = Convert.ToInt32(command.ExecuteScalar());
-                return number;
+                numberOfVisitors = Convert.ToInt32(commandNrOfVisitors.ExecuteScalar());
+
+                numberOfEntered = Convert.ToInt32(commandNrOfEntered.ExecuteScalar());
+
+                numberOfLeft = Convert.ToInt32(commandNrOfLeft.ExecuteScalar());
+
             }
             catch
             {
-                return -1;
+
 
             }
             finally
@@ -48,71 +60,37 @@ namespace StatusApp
             }
         }
 
-        public int NumberOfVisitorsEntered()
-        {
-            String sql = "SELECT COUNT(*) FROM entered_visitor";
-            MySqlCommand command = new MySqlCommand(sql, connection);
-
-            int number = 0;
-
-            try
-            {
-                connection.Open();
-                number = Convert.ToInt32(command.ExecuteScalar());
-                return number;
-            }
-            catch
-            {
-                return -1;
-
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-        }
-
-        public int NumberOfVisitorsLeft()
-        {
-            String sql = "SELECT COUNT(*) FROM entered_visitor WHERE has_left_event='Y'";
-            MySqlCommand command = new MySqlCommand(sql, connection);
-
-            int number = 0;
-
-            try
-            {
-                connection.Open();
-                number = Convert.ToInt32(command.ExecuteScalar());
-                return number;
-            }
-            catch
-            {
-                return -1;
-
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-        }
-        public int TotalAmountOfEventAccounts()
+        
+        public void TotalAmountOfEventAccounts(out double totalbalance,out double totalprofit)
         {
             String sql = "SELECT Sum(balance_left) FROM paid_visitor";
             MySqlCommand command = new MySqlCommand(sql, connection);
 
-            int number = 0;
+            String sql1 = "SELECT Sum(total_price) FROM shop";
+            MySqlCommand commandprofitshop = new MySqlCommand(sql1, connection);
+
+            String sql2 = "SELECT Sum(final_price) FROM lending";
+            MySqlCommand commandprofitlend = new MySqlCommand(sql2, connection);
+
+            double shop=0,lend=0;
+            totalbalance = -1;
+            totalprofit = -1;
 
             try
             {
                 connection.Open();
-                number = Convert.ToInt32(command.ExecuteScalar());
-                return number;
+                totalbalance = Convert.ToDouble(command.ExecuteScalar());
+
+                shop = Convert.ToDouble(commandprofitshop.ExecuteScalar());
+
+                lend = Convert.ToDouble(commandprofitlend.ExecuteScalar());
+
+                totalprofit = shop + lend;
+
+                
             }
             catch
             {
-                return -1;
 
             }
             finally

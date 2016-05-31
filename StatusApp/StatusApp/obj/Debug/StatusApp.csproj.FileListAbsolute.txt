@@ -7,3 +7,11 @@ E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.Properties.Resources.reso
 E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.csproj.GenerateResource.Cache
 E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.exe
 E:\Fontys\ProP\StatusApp\StatusApp\obj\Debug\StatusApp.pdb
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\bin\Debug\StatusApp.exe
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\bin\Debug\StatusApp.pdb
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\StatusApp.csprojResolveAssemblyReference.cache
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\StatusApp.Form1.resources
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\StatusApp.Properties.Resources.resources
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\StatusApp.csproj.GenerateResource.Cache
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\StatusApp.exe
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\StatusApp.pdb
