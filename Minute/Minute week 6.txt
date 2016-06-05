@@ -1,0 +1,45 @@
+Week 6 meeting, 22/3/16
+Minute taker: Liis, Chairman: Alexander
+Time: 11:35 - 12:45
+
+*11:35 - 12:45*
+discussed about selling tickets, no need for making paypal and actual paying, money is not our issue
+
+
+*11:45 - 12:15*
+discussion about website:
+-hashtags are not so important
+-should have a footer
+-first login, register (fill in all the personal information + account details)
+-redecorate the tab for buying tickets and renting camping spot, do not ask the visitors to fill in the personal information again.
+-personal details must also include a place to enter the email for later use.
+-copyrights problem (only if you upload to youtube/facebook)
+
+
+*12:15 - 12:40*
+applications GUIs:
+-entrance-app (main entrance and event entrance are similar):	
+	+email should be unique identifier
+	+registration number is number which will be scanned from the barcode (which is received by email)
+	+there is no possibility to pay at the entrance for the tickets or anything else
+	+make it able to put money on eventaccount through website before event (possibly also during)
+	+add functionality to connect bracelet with the barcode and eventaccount of the user
+	+first name and last name are not necessary to input, too time-consuming
+		
+-shop-app (also identical to loaning-app):
+	+paying with eventaccount, we scan the bracelet - no other input needed
+	+it should be possible to purchase multiple drinks and foods at once
+	+shop items will also have barcodes, in order to save time and effort in the shop
+	+visitors can check under "My Account" on website, what they have purchased - no paper receipts needed
+
+-event attendance app:
+	+add functionality to check how much money visitors have paid alltogether (profit to Mr. George)
+
+-client info app: 
+	+add functionality to see how many items of a certain type have been sold (overall and also per shop)
+
+
+*12:40 - 12:45*
+some other discussions: 	
+-we are allowed to think about companies who would sell tickets for us
+-think about paying options without having a bank involved (jars eindhoven azaleastraat)

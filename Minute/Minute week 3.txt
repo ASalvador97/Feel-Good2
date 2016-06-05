@@ -11,7 +11,9 @@ Discussion with Mr. George-questions for Mr. George
                           -paying method(alternative ways for buying a ticket and for putting money on the even-account)
                           -our limits and bounderies regarding this project
                           -client wants statistics regarding the sold products and visitors
-                          -precisely information on website/applicatitons:
-                                 +Rules in website (etc don’t bring food into the festival)
-                                 +time, performers, selling tickets options should/must be on the website
-                                 +taking care of the logfiles (need to be very detailed, for example every action which was taken should be recorded)
+			  -More precisely information on website/applicatitons:
+				+Rules in website (etc don’t bring food into the festival)
+				+time, performers, selling tickets options should/must be on the website
+				+taking care of the logfiles (need to be very detailed, for example every action which was taken should be recorded)
+
+
