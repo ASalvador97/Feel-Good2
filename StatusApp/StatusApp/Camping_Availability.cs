@@ -30,31 +30,31 @@ namespace StatusApp
             MySqlCommand commandoccupied = new MySqlCommand(sql, connection);
 
             String sql1 = "SELECT count(*) FROM `campingspot` WHERE `campingspot_nr` not in(select `CAMPINGSPOT_campingspot_nr` from campingspot_member)";
-            MySqlCommand commandfree = new MySqlCommand(sql, connection);
+            MySqlCommand commandfree = new MySqlCommand(sql1, connection);
 
-            String sql2 = "";
-            MySqlCommand commandinside = new MySqlCommand(sql, connection);
+            String sql2 = "SELECT count(*) FROM `entered_visitor` WHERE `Camping_status`='in'";
+            MySqlCommand commandinside = new MySqlCommand(sql2, connection);
 
-            String sql3 = "";
-            MySqlCommand commandoutside = new MySqlCommand(sql, connection);
+            String sql3 = "SELECT count(*) FROM `entered_visitor` WHERE `Camping_status`='out'";
+            MySqlCommand commandoutside = new MySqlCommand(sql3, connection);
 
             String sql4 = "SELECT count(`PAID_VISITOR_REGISTERED_USER_email`) FROM campingspot_member";
-            MySqlCommand commandpeoplewithspot = new MySqlCommand(sql, connection);
-
-            String sql5 = "";
-            MySqlCommand commandmoney = new MySqlCommand(sql, connection);
+            MySqlCommand commandpeoplewithspot = new MySqlCommand(sql4, connection);
 
             occupied = -1; free = -1; inside = -1; outside = -1; peoplewithspot = -1;
+
             double money=-1;
             try
             {
+                connection.Open();
+
                 occupied = Convert.ToInt32(commandoccupied.ExecuteScalar());
 
                 free = Convert.ToInt32(commandfree.ExecuteScalar());
 
-                inside=
+                inside = Convert.ToInt32(commandinside.ExecuteScalar());
 
-                outside=
+                outside = Convert.ToInt32(commandoutside.ExecuteScalar());
 
                 peoplewithspot = Convert.ToInt32(commandpeoplewithspot.ExecuteScalar());
 

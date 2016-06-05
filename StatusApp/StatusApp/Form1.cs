@@ -13,11 +13,13 @@ namespace StatusApp
     {
         private General gen;
         private Client_Info client;
+        private Camping_Availability camp;
         public Form1()
         {
             InitializeComponent();
             gen = new General();
             client = new Client_Info();
+            camp = new Camping_Availability();
         }
 
         private void btnLoadAllStudents_Click(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace StatusApp
         }
         public void DisplayingPersonalData(String code)
         {
-             try
+            try
             {
                 listboxStatusAndHistory.Items.Clear();
 
@@ -47,7 +49,7 @@ namespace StatusApp
                 foreach (String str in client.CampingInfo(tbemail.Text))
                     listboxStatusAndHistory.Items.Add(str);
             }
-            catch(NullReferenceException)
+            catch (NullReferenceException)
             {
                 listboxStatusAndHistory.Items.Clear();
                 listboxStatusAndHistory.Items.Add("There is no such person!!!!!!!!!!");
@@ -70,11 +72,29 @@ namespace StatusApp
             tbnotentered.Text = (numberOfVisitors - numberOfEntered).ToString();
             tbwholeft.Text = numberOfLeft.ToString();
 
-            gen.TotalAmountOfEventAccounts(out totalbalance,out totalprofit);
+            gen.TotalAmountOfEventAccounts(out totalbalance, out totalprofit);
             tbtotalamount.Text = totalbalance.ToString();
             tbmoney.Text = totalprofit.ToString();
 
             //camping availability
+
+
+            int occupied;
+            int free;
+            int inside;
+            int outside;
+            int peoplewithspot;
+            double money;
+
+            money=camp.CampingNumbers(out occupied, out free, out inside, out outside, out peoplewithspot);
+
+            tboccupied.Text = occupied.ToString();
+            tbfree.Text = free.ToString();
+            tbinside.Text = inside.ToString();
+            tboutside.Text = outside.ToString();
+            tbpeoplewithspot.Text = peoplewithspot.ToString();
+            tbmoneyfromspots.Text = money.ToString();
+
 
         }
 
