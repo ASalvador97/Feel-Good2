@@ -1,0 +1,18 @@
+*identification method discussion: 
+General problem: we want an identification method which is trustable, secure and economical
+	+sticking a paper with the barcode on the bracelet is not really possible, which can be damaged
+	+user receive the unique code by email, print it, bring it to the event and receive a bracelet with the code ----> not economical
+	+unique code -> bring the picture with the code -> checked in the event ----> can be stolen/dropped
+	+the user receive the bracelet, we charge them for it, and after event the users return the bracelet -> can be used for next event
+	+sticking a paper with the barcode on the bracelet -> can be damaged
+	+(good idea) the visitors receive the code from the email, bring it to the event -> checking at the entrance -> visitors are charged for 4-5 euros for the bracelet with unique code, but the visitors MUST return it (or we can charge them more, with 9-10 euros so the visitors do not have to return them)
+*Project plan discussion:
+	+more precise problem description: there is a need of websites, applications, database
+	+constraints:not ONLY with windows
+	+milestone: ms1) we make the database design and IMPLEMENT it
+		    ms2/3/4?) finish not only the applications, but connecting the database with the applications and the websites --> additional information for the project plan
+	+delivery: . more precise information
+		   . "we deliver all the deliverables"
+*action to be done for next week:
+	+finalize the project plan, send it to the tutor so he can give some feedback on the next meeting
+	+starting with the tasks: GUI applications, database design, websites
