@@ -89,9 +89,9 @@ namespace StatusApp
 
                 
             }
-            catch
+            catch(MySqlException)
             {
-
+                MessageBox.Show("Something went wrong with the connection");
             }
             finally
             {
