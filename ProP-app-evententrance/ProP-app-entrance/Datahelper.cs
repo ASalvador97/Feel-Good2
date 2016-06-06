@@ -23,14 +23,14 @@ namespace ProP_app_entrance
         }
 
 
-        public List<String> GetVisitor(string barcode)
+        public Visitor GetVisitor(String barcode)
         {
 
-            String sql = "select r.fname, r.lname, r.email, p.barcode from registered_user r join paid_visitor p on r.email=p.REGISTERED_USER_email where p.barcode='" + barcode + "'";
-            MySqlCommand command = new MySqlCommand(sql, connection);
+            String initsql = "select r.fname, r.lname, r.email, r.phone, p.barcode, ifnull(cm.CAMPINGSPOT_campingspot_nr,0) from registered_user r join paid_visitor p on r.email=p.REGISTERED_USER_email left join campingspot_member cm on cm.PAID_VISITOR_REGISTERED_USER_email = r.email where p.barcode='" + barcode + "'";
+            MySqlCommand command = new MySqlCommand(initsql, connection);
 
-            List<String> VisitorData = new List<String>();
-
+           
+            Visitor myVisitor = null;
 
             try
             {
@@ -39,24 +39,42 @@ namespace ProP_app_entrance
 
                 while (reader.Read())
                 {
-
-                    string name = Convert.ToString(reader["fname"]) + Convert.ToString(reader["lname"]);
-                    VisitorData.Add(name);
-                    string email = Convert.ToString(reader["email"]);
-                    VisitorData.Add(email);
-                    VisitorData.Add(barcode);
+                    myVisitor = new Visitor(Convert.ToString(reader["fname"]), Convert.ToString(reader["lname"]),
+                        Convert.ToString(reader["email"]), Convert.ToString(reader["phone"]), Convert.ToInt32(reader["ifnull(cm.CAMPINGSPOT_campingspot_nr,0)"]));               
 
                 }
             }
             catch
             {
-                MessageBox.Show("this visitor doesnt exist");
+                MessageBox.Show("Something went wrong");
             }
             finally
             {
                 connection.Close();
             }
-            return VisitorData;
+            return myVisitor;
+        }
+
+        public bool SyncBracelet(String chipid, string email, string eventid, string hasleftevent, string campingstatus)
+        {
+
+            String sql = "INSERT INTO `dbi338468`.`entered_visitor` (`chip_id`, `PAID_VISITOR_REGISTERED_USER_email`, `PAID_VISITOR_EVENT_event_id`, `has_left_event`, `Camping_status`) VALUES ('" + chipid + "', '" + email + "', '" + eventid + "', '" + hasleftevent + "', '" + campingstatus + "');";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+
+            try
+            {
+                connection.Open();
+                int nrOfRecordsChanged = command.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false; //which means the try-block was not executed succesfully, so  . . .
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }
