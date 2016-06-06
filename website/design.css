@@ -1,0 +1,228 @@
+body{
+    background-color: #000000;
+    background-image: url("background3.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	overflow-x: hidden;
+}
+
+
+
+.nav ul{
+    width:100%;
+    list-style-type: none;
+    position: absolute;
+    
+}
+
+.nav ul li {
+    float: left;
+    display: inline-block;
+    padding-left: 6%;
+}
+
+.nav ul li a{
+    font-family: Verdana;
+    color: #F0FFF0;
+    text-decoration: none;
+    font-size: 105%;
+}
+
+.nav ul li a:hover, a:active {
+    color: #bf360c;
+}
+
+
+
+.general {
+    width: 70%;
+    margin-top: 80px;
+    left: 15%;
+    right: 15%;
+    background-color: rgba(106,45,25,0.85);
+    position: absolute;
+}
+
+.general a:hover {
+    color: #bf360c;
+}
+
+.general p,h1,h2,h3,h4,h5 {
+    color:beige;
+    font-family: Century Gothic, sans-serif;
+}
+
+.general ul {
+    list-style-type:none;
+}
+
+.home h1,h2,h3,h4, ul li {
+    color:beige;
+    font-family: Century Gothic, sans-serif;
+}
+
+.home h2 {
+    font-size: 180%;
+    margin: 0;
+}
+
+.home h1 {
+    margin-top: 5%;
+    font-size: 450%;
+}
+
+
+
+.home a {
+    color: #bf360c;
+}
+
+.home a:hover{
+    color: beige;
+        
+}
+
+
+.art {
+    margin-top: 11%;
+}
+.artist ul li{
+    display: inline-block;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    line-height: 10%;
+    border-right: 1px solid #FFF5EE;
+    white-space: nowrap;
+}
+
+.artist ul li:last-child
+{
+    border-right: none;
+}
+
+.artist ul {
+    list-style-type: none;
+    
+}
+
+.gettickets h3{
+    padding-top: -2%;
+    color:black;
+    font-size: 150%;
+}
+
+.artist h4 {
+    font-size: 110%;
+}
+
+.artist h3 {
+    font-size: 130%;
+}
+
+.program 
+{
+    float: left;
+    list-style-type: none;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-right: 1px solid beige;
+    
+}
+.program:last-child{border-right: none;}
+
+
+
+.info {
+    padding-left: 10%;
+    padding-right: 20%;
+}
+
+.info h4,p {
+    margin: 2px;
+}
+
+.info a {
+    color: #bf360c;
+}
+
+.info a:hover {
+    color: beige;
+}
+
+.workshop{
+     float: left;
+    list-style-type: none;
+    padding-left: 17%;
+    padding-right: 17%;
+    border-right: 1px solid beige;
+}
+
+
+.workshop p, h4 {
+    padding: 5px;
+}
+
+
+
+.workshop:last-child{border-right: none;}
+
+
+
+.tickets {
+    float: left;
+    width: 40%;
+    border-right: 1px solid #FFF5EE;
+    padding-left: 5%;
+}
+
+.tickets:last-child{border-right: none;}
+
+
+.tickets h4{
+    padding-top: 20px;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.gallery img {
+    margin: 1%;
+}
+.gallery h1 {
+    margin: 0;
+    margin-bottom: auto;
+    font-weight: 200;
+}
+
+.gallery {
+    padding: 5%;
+    float: left;
+}
+
+.thumbnails img {
+    height: 100px;
+    border: 1px solid beige;
+    padding: 1px;
+}
+
+.thumbnails img:hover {
+    border: 1px solid #bf360c;
+    cursor:pointer;
+}
+
+.preview img {
+    border: 1px solid beige;
+    padding: 1px;
+    width: 800px;
+}
+/*.rotate90{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}*/
+
