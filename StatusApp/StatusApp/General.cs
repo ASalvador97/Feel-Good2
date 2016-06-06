@@ -49,8 +49,10 @@ namespace StatusApp
                 numberOfLeft = Convert.ToInt32(commandNrOfLeft.ExecuteScalar());
 
             }
-            catch
+            catch(MySqlException)
             {
+                MessageBox.Show("Something went wrong with the connection");
+            
 
 
             }

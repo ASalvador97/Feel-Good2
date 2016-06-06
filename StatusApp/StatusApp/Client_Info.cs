@@ -61,15 +61,15 @@ namespace StatusApp
             return null;
         }
 
-        public List<String> CampingInfo(String visitoremail)
+        public CampSpot CampingInfo(String visitoremail)
         {
             String sql = "select campingspot_nr ,email,lname,fname FROM registered_user,paid_visitor,campingspot_member,campingspot WHERE `REGISTERED_USER_email`=email and `REGISTERED_USER_email`=`PAID_VISITOR_REGISTERED_USER_email` and `CAMPINGSPOT_campingspot_nr`=campingspot_nr and campingspot_nr = (select campingspot_nr FROM campingspot_member,campingspot WHERE `CAMPINGSPOT_campingspot_nr`=campingspot_nr and `PAID_VISITOR_REGISTERED_USER_email`='"+visitoremail+"')";
             MySqlCommand command = new MySqlCommand(sql, connection);
 
-            List<String> visitorcampinginfo;
-            visitorcampinginfo = new List<String>();
+            CampSpot spot = null;
 
-            String fname = "", lname = "", email = "",campingspot = "";
+            String fname = "", lname = "", email = "";
+            int campingspot = 0;
 
             try
             {
@@ -83,14 +83,11 @@ namespace StatusApp
                     fname = Convert.ToString(reader["fname"]);
                     lname = Convert.ToString(reader["lname"]);
                     email = Convert.ToString(reader["email"]);
-                    campingspot = Convert.ToString(reader["campingspot_nr"]);
+                    campingspot = Convert.ToInt32(reader["campingspot_nr"]);
 
                 }
-                visitorcampinginfo.Add(campingspot+"\n");
-                visitorcampinginfo.Add(fname+"\n");
-                visitorcampinginfo.Add(lname+"\n");
-                visitorcampinginfo.Add(email+"\n");
 
+                spot = new CampSpot(lname, fname, email, campingspot);
 
             }
             catch
@@ -101,7 +98,7 @@ namespace StatusApp
             {
                 connection.Close();
             }
-            return visitorcampinginfo;
+            return spot;
         }
 
     }

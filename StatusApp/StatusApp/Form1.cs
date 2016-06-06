@@ -14,12 +14,29 @@ namespace StatusApp
         private General gen;
         private Client_Info client;
         private Camping_Availability camp;
+        private ShopAndLending market;
         public Form1()
         {
             InitializeComponent();
             gen = new General();
             client = new Client_Info();
             camp = new Camping_Availability();
+            market = new ShopAndLending();
+
+
+
+            //shops and lending
+            foreach (ShopProduct s in market.ShopItems())
+            {
+                comboBox1.Items.Add(s);
+                comboBox1.SelectedIndexChanged += new EventHandler(comboBox1_SelectedIndexChanged);
+            }
+
+            foreach (LendingItem s in market.LendItems())
+            {
+                comboBox2.Items.Add(s);
+                comboBox2.SelectedIndexChanged += new EventHandler(comboBox2_SelectedIndexChanged);
+            }
         }
 
         private void btnLoadAllStudents_Click(object sender, EventArgs e)
@@ -44,10 +61,17 @@ namespace StatusApp
                 listboxStatusAndHistory.Items.Add("Balance left: " + v.Balance_left);
 
                 listboxStatusAndHistory.Items.Add("");
-
                 listboxStatusAndHistory.Items.Add("CAMPING INFORMATION:");
-                foreach (String str in client.CampingInfo(tbemail.Text))
-                    listboxStatusAndHistory.Items.Add(str);
+
+                CampSpot spot = client.CampingInfo(code);
+                if (spot!=null)
+                {
+                    listboxStatusAndHistory.Items.Add("Spot: " + spot.Spot);
+                    listboxStatusAndHistory.Items.Add("Email: " + spot.Email);
+                    listboxStatusAndHistory.Items.Add("First Name: " + spot.Fname);
+                    listboxStatusAndHistory.Items.Add("Last Name: " + spot.Lname);
+                }
+
             }
             catch (NullReferenceException)
             {
@@ -86,7 +110,7 @@ namespace StatusApp
             int peoplewithspot;
             double money;
 
-            money=camp.CampingNumbers(out occupied, out free, out inside, out outside, out peoplewithspot);
+            money = camp.CampingNumbers(out occupied, out free, out inside, out outside, out peoplewithspot);
 
             tboccupied.Text = occupied.ToString();
             tbfree.Text = free.ToString();
@@ -95,7 +119,54 @@ namespace StatusApp
             tbpeoplewithspot.Text = peoplewithspot.ToString();
             tbmoneyfromspots.Text = money.ToString();
 
+            
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBoxcampinspotsandpeople.Items.Clear();
+            listBoxcampinspotsandpeople.Items.Add("Free camping spots:");
+
+            foreach (int c in camp.FreeSpots())
+            {
+                listBoxcampinspotsandpeople.Items.Add(c.ToString());
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBoxcampinspotsandpeople.Items.Clear();
+            listBoxcampinspotsandpeople.Items.Add("Camping spot: " + tbspot.Text);
+            try
+            {
+                foreach (CampSpot c in camp.Specificspot(Convert.ToInt32(tbspot.Text)))
+                {
+                    listBoxcampinspotsandpeople.Items.Add(c.Fname + " " + c.Lname + " " + c.Email);
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Wrong input!");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShopProduct selecteditem = (ShopProduct)comboBox1.SelectedItem;
+
+            tbQuantity.Text = selecteditem.Quantitysold.ToString();
+            tbrevenue.Text = selecteditem.Revenue.ToString();
+
+            
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LendingItem selecteditem = (LendingItem)comboBox2.SelectedItem;
+           
+            tbtimeslend.Text = selecteditem.Quantitysold.ToString();
+            tbrevenuee.Text = selecteditem.Revenue.ToString();
         }
 
     }

@@ -73,5 +73,63 @@ namespace StatusApp
             return money;
         }
 
+        public List<CampSpot> Specificspot(int code)
+        {
+            String sql = "SELECT fname,lname,`PAID_VISITOR_REGISTERED_USER_email` ,`CAMPINGSPOT_campingspot_nr` FROM `campingspot_member`,paid_visitor,registered_user WHERE `PAID_VISITOR_REGISTERED_USER_email`=REGISTERED_USER_email and REGISTERED_USER_email=email and `CAMPINGSPOT_campingspot_nr`=" + code.ToString() + ";";
+            MySqlCommand commandspecspot = new MySqlCommand(sql,connection);
+
+            List<CampSpot> peopleintthatspot=new List<CampSpot>();
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = commandspecspot.ExecuteReader();
+
+                while(reader.Read())
+                    peopleintthatspot.Add(new CampSpot(Convert.ToString(reader["fname"]), Convert.ToString(reader["lname"]), Convert.ToString(reader["PAID_VISITOR_REGISTERED_USER_email"]), Convert.ToInt32(reader["CAMPINGSPOT_campingspot_nr"])));
+
+                             
+            }
+            catch(MySqlException)
+            {
+                MessageBox.Show("Something went wrong with the connection");
+                
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return peopleintthatspot;
+        }
+
+        public List<int> FreeSpots() 
+        {
+            String sql = "SELECT `campingspot_nr` FROM `campingspot` WHERE campingspot_nr NOT IN (select campingspot_campingspot_nr from campingspot_member)";
+            MySqlCommand commandfreespot = new MySqlCommand(sql, connection);
+
+            List<int> freespots = new List<int>();
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = commandfreespot.ExecuteReader();
+
+                while (reader.Read())
+                    freespots.Add(Convert.ToInt32(reader["campingspot_nr"]));
+
+
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("Something went wrong with the connection");
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return freespots;
+        }
+
     }
 }
