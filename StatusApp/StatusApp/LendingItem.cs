@@ -36,7 +36,7 @@ namespace StatusApp
 
         public override string ToString()
         {
-            return name;
+            return itemid+" "+name;
         }
     }
 }
