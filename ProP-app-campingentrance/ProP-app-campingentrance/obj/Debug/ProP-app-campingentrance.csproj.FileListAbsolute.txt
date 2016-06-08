@@ -26,3 +26,14 @@ F:\College\Block 4\prop\ProP-app-campingentrance\ProP-app-campingentrance\obj\De
 D:\College\Block 4\prop\ProP-app-campingentrance\ProP-app-campingentrance\bin\Debug\ProP-app-campingentrance.exe.config
 D:\College\Block 4\prop\ProP-app-campingentrance\ProP-app-campingentrance\obj\Debug\ProP-app-campingentrance.exe
 D:\College\Block 4\prop\ProP-app-campingentrance\ProP-app-campingentrance\obj\Debug\ProP-app-campingentrance.pdb
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\bin\Debug\ProP-app-campingentrance.exe.config
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\obj\Debug\ProP-app-campingentrance.exe
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\obj\Debug\ProP-app-campingentrance.pdb
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\obj\Debug\ProP-app-campingentrance.csprojResolveAssemblyReference.cache
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\obj\Debug\ProP_app_campingentrance.Form1.resources
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\obj\Debug\ProP_app_campingentrance.Properties.Resources.resources
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\obj\Debug\ProP-app-campingentrance.csproj.GenerateResource.Cache
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\bin\Debug\ProP-app-campingentrance.exe
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\bin\Debug\ProP-app-campingentrance.pdb
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\bin\Debug\MySql.Data.dll
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\ProP-app-campingentrance\ProP-app-campingentrance\bin\Debug\Phidget21.NET.dll
