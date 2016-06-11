@@ -33,7 +33,7 @@
   
   <tr>
   <td><div align="right">Date Of Birth*:</div></td> 
-  <td><input type="date" name="dob" /></td>
+  <td><input type="date" name="dob" max="2000-12-31"/></td>
   </tr>
   
  

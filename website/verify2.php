@@ -16,7 +16,7 @@
   }
   if(password_verify($user_password, $hashed_pass)) {
 	  $_SESSION["LoggedIn"] = 1;
-	  $_SESSION["Username"] = $user_email;
+	  $_SESSION["Email"] = $user_email;
 	   header("Location: myaccount.php"); 
   }
 
