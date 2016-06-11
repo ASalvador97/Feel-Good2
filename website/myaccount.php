@@ -37,10 +37,10 @@ require_once 'psl-config.php';
 	
 
 //check if person is in paid_visitor, if he is, hide the div to buy tickets. if he is not, hide the div saying "you already have tickets"
-$sql = "Select * from paid_visitor where email = '$email'";
+$sql = "Select * from paid_visitor where REGISTERED_USER_email = '$dbemail'";
   
   $result = $con->query($sql);
-  if($result->num_rows != 0)
+  if($result->num_rows > 0)
 {
 ?>
 <style>.buyticket{
