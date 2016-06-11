@@ -6,26 +6,55 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Phidgets;
+using Phidgets.Events;
 
 namespace StatusApp
 {
     public partial class Form1 : Form
     {
+        //The objects that will be used
         private General gen;
         private Client_Info client;
         private Camping_Availability camp;
         private ShopAndLending market;
+        private RFID myRFIDReader;
+
         public Form1()
         {
             InitializeComponent();
+            //Creating the items
             gen = new General();
             client = new Client_Info();
             camp = new Camping_Availability();
             market = new ShopAndLending();
 
+            //Creating the rfid object and connecting the rfid device
+            try
+            {
+                myRFIDReader = new RFID();
+                myRFIDReader.Tag += new TagEventHandler(processtag);
+                myRFIDReader.open();
+
+                myRFIDReader.waitForAttachment(3000);
+                myRFIDReader.Antenna = true;
+                myRFIDReader.LED = true;
+
+            }
+            catch (PhidgetException)
+            {
+                MessageBox.Show("No RFID opened!");
+            }
+            catch (DllNotFoundException)
+            {
+                MessageBox.Show("No device connected or the dll is wrong!");
+            }
 
 
-            //shops and lending
+
+
+
+            //Filling the comboboxes with the items from the shops and the pc-doctor
             foreach (ShopProduct s in market.ShopItems())
             {
                 comboBox1.Items.Add(s);
@@ -39,12 +68,16 @@ namespace StatusApp
             }
         }
 
+        public void processtag(object sender, TagEventArgs e)
+        {//The method that will handle the event of a processed tag will take place
+            this.DisplayingPersonalData(e.Tag);
+        }
         private void btnLoadAllStudents_Click(object sender, EventArgs e)
-        {
+        {//In case there is a problem with reading the chip id, information regarding the visitor will be displayed manually
             this.DisplayingPersonalData(tbemail.Text);
         }
         public void DisplayingPersonalData(String code)
-        {
+        {//Display all the information regarding the scanned visitor
             try
             {
                 listboxStatusAndHistory.Items.Clear();
@@ -81,7 +114,8 @@ namespace StatusApp
 
         }
         private void timer1_Tick(object sender, EventArgs e)
-        {
+        {//Timer to keep the statistics data up-to-date
+
             //general
             int numberOfVisitors;
             int numberOfEntered;
@@ -96,7 +130,8 @@ namespace StatusApp
             tbnotentered.Text = (numberOfVisitors - numberOfEntered).ToString();
             tbwholeft.Text = numberOfLeft.ToString();
 
-            gen.TotalAmountOfEventAccounts(out totalbalance, out totalprofit);
+            gen.TotalAmountOfEventAccountsAndProfit(out totalbalance, out totalprofit);
+
             tbtotalamount.Text = totalbalance.ToString();
             tbmoney.Text = totalprofit.ToString();
 
@@ -105,26 +140,20 @@ namespace StatusApp
 
             int occupied;
             int free;
-            int inside;
-            int outside;
             int peoplewithspot;
             double money;
 
-            money = camp.CampingNumbers(out occupied, out free, out inside, out outside, out peoplewithspot);
+            money = camp.CampingNumbers(out occupied, out free, out peoplewithspot);
 
             tboccupied.Text = occupied.ToString();
             tbfree.Text = free.ToString();
-            tbinside.Text = inside.ToString();
-            tboutside.Text = outside.ToString();
             tbpeoplewithspot.Text = peoplewithspot.ToString();
             tbmoneyfromspots.Text = money.ToString();
-
-            
 
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        {//Displaying the free camping spots
             listBoxcampinspotsandpeople.Items.Clear();
             listBoxcampinspotsandpeople.Items.Add("Free camping spots:");
 
@@ -135,7 +164,8 @@ namespace StatusApp
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {//Displaying information regarding a specific spot
+
             listBoxcampinspotsandpeople.Items.Clear();
             listBoxcampinspotsandpeople.Items.Add("Camping spot: " + tbspot.Text);
             try
@@ -152,7 +182,7 @@ namespace StatusApp
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {//Displaying data in the shop combobox
             ShopProduct selecteditem = (ShopProduct)comboBox1.SelectedItem;
 
             tbQuantity.Text = selecteditem.Quantitysold.ToString();
@@ -162,7 +192,7 @@ namespace StatusApp
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {//Displaying data in the lending part
             LendingItem selecteditem = (LendingItem)comboBox2.SelectedItem;
            
             tbtimeslend.Text = selecteditem.Quantitysold.ToString();

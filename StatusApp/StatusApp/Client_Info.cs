@@ -13,10 +13,6 @@ namespace StatusApp
     {
         public MySqlConnection connection;
 
-        /// <summary>
-        /// it has to work for both chip code and the email so betta be working
-        /// </summary>
-
         public Client_Info()
         {
             String connectionInfo = "server=athena01.fhict.local;" +
@@ -28,9 +24,11 @@ namespace StatusApp
             connection = new MySqlConnection(connectionInfo);
         }
 
-        public Visitor VisitorInfo(String visitoremail)
+        public Visitor VisitorInfo(String chip)
         {
-            String sql = "SELECT * FROM registered_user,paid_visitor where registered_user_email=email and email='"+visitoremail+"'";
+            //Information regarding the visitor whose chip was scanned
+
+            String sql = "SELECT * FROM entered_visitor ev join paid_visitor pv on ev.PAID_VISITOR_REGISTERED_USER_email=pv.REGISTERED_USER_email join registered_user ru on ru.email=pv.REGISTERED_USER_email where ev.chip_id='"+chip+"'";
             MySqlCommand command = new MySqlCommand(sql, connection);
 
             try
@@ -61,9 +59,11 @@ namespace StatusApp
             return null;
         }
 
-        public CampSpot CampingInfo(String visitoremail)
+        public CampSpot CampingInfo(String chip)
         {
-            String sql = "select campingspot_nr ,email,lname,fname FROM registered_user,paid_visitor,campingspot_member,campingspot WHERE `REGISTERED_USER_email`=email and `REGISTERED_USER_email`=`PAID_VISITOR_REGISTERED_USER_email` and `CAMPINGSPOT_campingspot_nr`=campingspot_nr and campingspot_nr = (select campingspot_nr FROM campingspot_member,campingspot WHERE `CAMPINGSPOT_campingspot_nr`=campingspot_nr and `PAID_VISITOR_REGISTERED_USER_email`='"+visitoremail+"')";
+            //The camping information of this visitor that was just scanned
+
+            String sql = "SELECT cm.CAMPINGSPOT_campingspot_nr,cm.PAID_VISITOR_REGISTERED_USER_email, ru.fname, ru.lname from entered_visitor ev join paid_visitor pv on ev.PAID_VISITOR_REGISTERED_USER_email=pv.REGISTERED_USER_email join campingspot_member cm on cm.PAID_VISITOR_REGISTERED_USER_email=pv.REGISTERED_USER_email join registered_user ru on ru.email=pv.REGISTERED_USER_email where ev.chip_id='"+chip+"'";
             MySqlCommand command = new MySqlCommand(sql, connection);
 
             CampSpot spot = null;
@@ -82,8 +82,8 @@ namespace StatusApp
                 {
                     fname = Convert.ToString(reader["fname"]);
                     lname = Convert.ToString(reader["lname"]);
-                    email = Convert.ToString(reader["email"]);
-                    campingspot = Convert.ToInt32(reader["campingspot_nr"]);
+                    email = Convert.ToString(reader["PAID_VISITOR_REGISTERED_USER_email"]);
+                    campingspot = Convert.ToInt32(reader["CAMPINGSPOT_campingspot_nr"]);
 
                 }
 

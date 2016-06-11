@@ -25,21 +25,14 @@ namespace ProP_app_campingentrance
             try
             {
                 myRFIDReader = new RFID();
-                //myRFIDReader.Attach += new AttachEventHandler(ShowWhoIsAttached);
-                //myRFIDReader.Detach += new DetachEventHandler(ShowWhoIsDetached);
                 myRFIDReader.Tag += new TagEventHandler(ProcessThisTag);
-                myRFIDReader.open();
-                myRFIDReader.waitForAttachment(3000);
-                MessageBox.Show("RFID opened.");
-                myRFIDReader.Antenna = true;
-                myRFIDReader.LED = true;
-
+                
             }
             catch (PhidgetException)
             {
-                MessageBox.Show("error at start-up.");
+                MessageBox.Show("No RFID opened!");
             }
-            catch(DllNotFoundException)
+            catch (DllNotFoundException)
             {
                 MessageBox.Show("No device connected or the dll is wrong!");
             }
@@ -47,37 +40,49 @@ namespace ProP_app_campingentrance
 
         private void ProcessThisTag(object sender, TagEventArgs e)
         {
-            CampSpot spot=camp.CampingInfo(e.Tag);
+            CampSpot spot = camp.CampingInfo(e.Tag);
 
             if (spot != null)
             {
-                timer1.Enabled = true;
+                panel1.BackColor = Color.Blue;
+                label1.Text = "YES";
                 lbName.Text = spot.Lname + " " + spot.Fname;
                 lbEmail.Text = spot.Email;
                 lbSpot.Text = spot.Spot.ToString();
             }
             else
             {
-                timer2.Enabled = true;
+                panel1.BackColor = Color.Red;
+                label1.Text = "NO";
                 lbName.Text = "-";
                 lbEmail.Text = "-";
                 lbSpot.Text = "-";
-                label1.Text = "YES/NO";
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                myRFIDReader.open();
+
+                myRFIDReader.waitForAttachment(3000);
+
+                MessageBox.Show("RFID opened.");
+
+                myRFIDReader.Antenna = true;
+                myRFIDReader.LED = true;
+            }
+            catch(PhidgetException)
+            {
+                MessageBox.Show("error at start-up.");
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            panel1.BackColor = Color.AliceBlue;
-            label1.Text = "YES";
-            timer1.Enabled = false;
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            panel1.BackColor = Color.Red;
-            label1.Text = "NO";
-            timer2.Enabled = false;
+            myRFIDReader.LED = false;
+            myRFIDReader.Antenna = false;
+            myRFIDReader.close();
         }
 
     }

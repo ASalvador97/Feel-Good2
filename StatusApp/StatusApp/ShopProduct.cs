@@ -6,7 +6,7 @@ using System.Text;
 namespace StatusApp
 {
     class ShopProduct
-    {
+    {//Here will be stored information regarding an item from the shops
         private int productid;
         private String description;
         private double price;

@@ -15,3 +15,4 @@ C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\Sta
 C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\StatusApp.csproj.GenerateResource.Cache
 C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\StatusApp.exe
 C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\obj\Debug\StatusApp.pdb
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\StatusApp\StatusApp\bin\Debug\Phidget21.NET.dll

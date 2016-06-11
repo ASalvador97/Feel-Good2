@@ -26,12 +26,14 @@ namespace StatusApp
 
         public List<ShopProduct> ShopItems()
         {
+            // Information regarding a purchased product from the shop(the sold quantity and the money gained by the purchases of this item)
             String sql = "SELECT `product_id`,`description` ,`price`,`in_stock`, sum(quantity) FROM `product` ,shop_line WHERE `product_id`=`PRODUCT_product_id` group by `product_id`,`description` ,`price`,`in_stock`";
             MySqlCommand commandproduct = new MySqlCommand(sql,connection);
 
             List<ShopProduct> products = new List<ShopProduct>();
             int quantity;
             double price;
+
             try
             {
                 connection.Open();
@@ -60,7 +62,10 @@ namespace StatusApp
 
         public List<LendingItem> LendItems()
         {
-            String sql = "SELECT item_id,name,price_hour,deposit,in_stock, count(*),sum(TIMESTAMPDIFF(HOUR,time_borrowed,time_returned)) FROM `lend_item`, lending_line WHERE `LEND_ITEM_item_id`=item_id group by item_id,name,price_hour,deposit,in_stock";
+            // Information regarding a lended product from the pc-doctor(the lended time and the money gained by the rent of this item)
+
+
+            String sql = "SELECT item_id,name,price_hour,deposit,in_stock, count(*),ifnull(sum(TIMESTAMPDIFF(HOUR,time_borrowed,time_returned)),0) FROM `lend_item`, lending_line WHERE `LEND_ITEM_item_id`=item_id group by item_id,name,price_hour,deposit,in_stock";
             MySqlCommand commandlending = new MySqlCommand(sql,connection);
 
             List<LendingItem> lendings = new List<LendingItem>();
@@ -73,7 +78,7 @@ namespace StatusApp
 
                 while (reader.Read())
                 {
-                    time = Convert.ToInt32(reader["sum(TIMESTAMPDIFF(HOUR,time_borrowed,time_returned))"]);
+                    time = Convert.ToInt32(reader["ifnull(sum(TIMESTAMPDIFF(HOUR,time_borrowed,time_returned)),0)"]);
                     pricehour = Convert.ToDouble(reader["price_hour"]);
                     lendings.Add(new LendingItem(Convert.ToInt32(reader["item_id"]), Convert.ToString(reader["name"]), Convert.ToDouble(reader["price_hour"]), Convert.ToDouble(reader["deposit"]), Convert.ToInt32(reader["in_stock"]), time,time*pricehour));
                 }

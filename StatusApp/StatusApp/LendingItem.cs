@@ -7,6 +7,8 @@ namespace StatusApp
 {
     class LendingItem
     {
+        //A class that contains information about a lended item
+
         private int itemid;
         private String name;
         private double pricehour;

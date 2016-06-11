@@ -6,7 +6,8 @@ using System.Text;
 namespace StatusApp
 {
     class CampSpot
-    {
+    {//A class that contains information regarding a camping spot
+
         private String lname;
         private String fname;
         private String email;

@@ -6,7 +6,7 @@ using System.Text;
 namespace StatusApp
 {
     class Visitor
-    {
+    {//Here will be stored information related to a visitor
 
         private String fname, lname, email, phone, city, country;
         private DateTime dob;

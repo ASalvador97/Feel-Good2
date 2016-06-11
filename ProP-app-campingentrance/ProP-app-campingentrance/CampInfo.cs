@@ -40,23 +40,19 @@ namespace ProP_app_campingentrance
                 connection.Open();
                 MySqlDataReader reader = command.ExecuteReader();
 
-
-
                 while (reader.Read())
                 {
                     fname = Convert.ToString(reader["fname"]);
                     lname = Convert.ToString(reader["lname"]);
                     email = Convert.ToString(reader["email"]);
                     campingspot = Convert.ToInt32(reader["CAMPINGSPOT_campingspot_nr"]);
+                    spot = new CampSpot(lname, fname, email, campingspot);
 
                 }
-
-                spot = new CampSpot(lname, fname, email, campingspot);
-
             }
             catch
             {
-                MessageBox.Show("error while loading the visitor's camping info");
+                MessageBox.Show("Error while loading the visitor's camping info!");
             }
             finally
             {

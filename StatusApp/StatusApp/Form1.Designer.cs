@@ -54,33 +54,29 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tbmoneyfromspots = new System.Windows.Forms.TextBox();
             this.tbpeoplewithspot = new System.Windows.Forms.TextBox();
-            this.tboutside = new System.Windows.Forms.TextBox();
-            this.tbinside = new System.Windows.Forms.TextBox();
             this.tbfree = new System.Windows.Forms.TextBox();
             this.tboccupied = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.listBoxcampinspotsandpeople = new System.Windows.Forms.ListBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tbrevenue = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tbQuantity = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.tbtimeslend = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tbrevenuee = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.tbQuantity = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tbrevenue = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -294,17 +290,13 @@
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.tbmoneyfromspots);
             this.tabPage3.Controls.Add(this.tbpeoplewithspot);
-            this.tabPage3.Controls.Add(this.tboutside);
-            this.tabPage3.Controls.Add(this.tbinside);
             this.tabPage3.Controls.Add(this.tbfree);
             this.tabPage3.Controls.Add(this.tboccupied);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.listBoxcampinspotsandpeople);
-            this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -342,35 +334,21 @@
             // 
             // tbmoneyfromspots
             // 
-            this.tbmoneyfromspots.Location = new System.Drawing.Point(543, 260);
+            this.tbmoneyfromspots.Location = new System.Drawing.Point(548, 179);
             this.tbmoneyfromspots.Name = "tbmoneyfromspots";
             this.tbmoneyfromspots.Size = new System.Drawing.Size(121, 26);
             this.tbmoneyfromspots.TabIndex = 29;
             // 
             // tbpeoplewithspot
             // 
-            this.tbpeoplewithspot.Location = new System.Drawing.Point(543, 223);
+            this.tbpeoplewithspot.Location = new System.Drawing.Point(546, 132);
             this.tbpeoplewithspot.Name = "tbpeoplewithspot";
             this.tbpeoplewithspot.Size = new System.Drawing.Size(121, 26);
             this.tbpeoplewithspot.TabIndex = 28;
             // 
-            // tboutside
-            // 
-            this.tboutside.Location = new System.Drawing.Point(543, 161);
-            this.tboutside.Name = "tboutside";
-            this.tboutside.Size = new System.Drawing.Size(121, 26);
-            this.tboutside.TabIndex = 27;
-            // 
-            // tbinside
-            // 
-            this.tbinside.Location = new System.Drawing.Point(543, 129);
-            this.tbinside.Name = "tbinside";
-            this.tbinside.Size = new System.Drawing.Size(121, 26);
-            this.tbinside.TabIndex = 26;
-            // 
             // tbfree
             // 
-            this.tbfree.Location = new System.Drawing.Point(543, 60);
+            this.tbfree.Location = new System.Drawing.Point(543, 70);
             this.tbfree.Name = "tbfree";
             this.tbfree.Size = new System.Drawing.Size(121, 26);
             this.tbfree.TabIndex = 25;
@@ -386,7 +364,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(127, 257);
+            this.label12.Location = new System.Drawing.Point(132, 176);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(407, 29);
@@ -397,7 +375,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(4, 219);
+            this.label8.Location = new System.Drawing.Point(7, 128);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(532, 29);
@@ -412,17 +390,6 @@
             this.listBoxcampinspotsandpeople.Name = "listBoxcampinspotsandpeople";
             this.listBoxcampinspotsandpeople.Size = new System.Drawing.Size(506, 224);
             this.listBoxcampinspotsandpeople.TabIndex = 18;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(230, 154);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(298, 29);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Number of visitors outside:";
             // 
             // label11
             // 
@@ -439,23 +406,12 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(278, 56);
+            this.label10.Location = new System.Drawing.Point(278, 66);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(250, 29);
             this.label10.TabIndex = 15;
             this.label10.Text = "Number of free spots: ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(244, 125);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(284, 29);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Number of visitors inside:";
             // 
             // tabPage4
             // 
@@ -481,71 +437,25 @@
             this.tabPage4.Text = "Shop Revenue";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // timer1
+            // label20
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Rockwell Nova Cond", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(57, 270);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(144, 49);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "Lending";
             // 
-            // tbrevenue
+            // label19
             // 
-            this.tbrevenue.Enabled = false;
-            this.tbrevenue.Location = new System.Drawing.Point(334, 203);
-            this.tbrevenue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbrevenue.Name = "tbrevenue";
-            this.tbrevenue.Size = new System.Drawing.Size(212, 26);
-            this.tbrevenue.TabIndex = 10;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(334, 62);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 28);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(219, 58);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(108, 29);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Product: ";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(124, 200);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(203, 29);
-            this.label18.TabIndex = 18;
-            this.label18.Text = "Revenue earned: ";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(163, 130);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(164, 29);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "Quantity sold: ";
-            // 
-            // tbQuantity
-            // 
-            this.tbQuantity.Enabled = false;
-            this.tbQuantity.Location = new System.Drawing.Point(334, 134);
-            this.tbQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbQuantity.Name = "tbQuantity";
-            this.tbQuantity.Size = new System.Drawing.Size(212, 26);
-            this.tbQuantity.TabIndex = 20;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Rockwell Nova Cond", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(57, 23);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(95, 49);
+            this.label19.TabIndex = 27;
+            this.label19.Text = "Shop";
             // 
             // tbtimeslend
             // 
@@ -608,25 +518,71 @@
             this.comboBox2.TabIndex = 21;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // label19
+            // tbQuantity
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Rockwell Nova Cond", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(57, 23);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(95, 49);
-            this.label19.TabIndex = 27;
-            this.label19.Text = "Shop";
+            this.tbQuantity.Enabled = false;
+            this.tbQuantity.Location = new System.Drawing.Point(334, 134);
+            this.tbQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbQuantity.Name = "tbQuantity";
+            this.tbQuantity.Size = new System.Drawing.Size(212, 26);
+            this.tbQuantity.TabIndex = 20;
             // 
-            // label20
+            // label15
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Rockwell Nova Cond", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(57, 270);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(144, 49);
-            this.label20.TabIndex = 28;
-            this.label20.Text = "Lending";
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(163, 130);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(164, 29);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Quantity sold: ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(124, 200);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(203, 29);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "Revenue earned: ";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(219, 58);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(108, 29);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Product: ";
+            // 
+            // tbrevenue
+            // 
+            this.tbrevenue.Enabled = false;
+            this.tbrevenue.Location = new System.Drawing.Point(334, 203);
+            this.tbrevenue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbrevenue.Name = "tbrevenue";
+            this.tbrevenue.Size = new System.Drawing.Size(212, 26);
+            this.tbrevenue.TabIndex = 10;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(334, 62);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(212, 28);
+            this.comboBox1.TabIndex = 8;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -673,17 +629,13 @@
         private System.Windows.Forms.Button btnLoadAllStudents;
         private System.Windows.Forms.ListBox listboxStatusAndHistory;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListBox listBoxcampinspotsandpeople;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tbmoneyfromspots;
         private System.Windows.Forms.TextBox tbpeoplewithspot;
-        private System.Windows.Forms.TextBox tboutside;
-        private System.Windows.Forms.TextBox tbinside;
         private System.Windows.Forms.TextBox tbfree;
         private System.Windows.Forms.TextBox tboccupied;
         private System.Windows.Forms.TextBox tbspot;

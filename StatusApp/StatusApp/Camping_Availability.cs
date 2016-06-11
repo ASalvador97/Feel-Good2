@@ -11,6 +11,7 @@ namespace StatusApp
 {
     class Camping_Availability
     {
+        //this class regards information about the camping availability
         public MySqlConnection connection;
 
         public Camping_Availability()
@@ -24,8 +25,10 @@ namespace StatusApp
             connection = new MySqlConnection(connectionInfo);
         }
 
-        public Double CampingNumbers(out int occupied,out int free,out int inside, out int outside,out int peoplewithspot)
+        public Double CampingNumbers(out int occupied,out int free,out int peoplewithspot)
         {
+            //Here are some statistics regarding the number of occupied/free spots, people with spots and the amount of money gained by the booked spots
+
             String sql = "SELECT count(distinct `CAMPINGSPOT_campingspot_nr`) FROM `campingspot_member`";
             MySqlCommand commandoccupied = new MySqlCommand(sql, connection);
 
@@ -41,7 +44,7 @@ namespace StatusApp
             String sql4 = "SELECT count(`PAID_VISITOR_REGISTERED_USER_email`) FROM campingspot_member";
             MySqlCommand commandpeoplewithspot = new MySqlCommand(sql4, connection);
 
-            occupied = -1; free = -1; inside = -1; outside = -1; peoplewithspot = -1;
+            occupied = -1; free = -1; peoplewithspot = -1;
 
             double money=-1;
             try
@@ -51,10 +54,6 @@ namespace StatusApp
                 occupied = Convert.ToInt32(commandoccupied.ExecuteScalar());
 
                 free = Convert.ToInt32(commandfree.ExecuteScalar());
-
-                inside = Convert.ToInt32(commandinside.ExecuteScalar());
-
-                outside = Convert.ToInt32(commandoutside.ExecuteScalar());
 
                 peoplewithspot = Convert.ToInt32(commandpeoplewithspot.ExecuteScalar());
 
@@ -73,9 +72,11 @@ namespace StatusApp
             return money;
         }
 
-        public List<CampSpot> Specificspot(int code)
+        public List<CampSpot> Specificspot(int spot)
         {
-            String sql = "SELECT fname,lname,`PAID_VISITOR_REGISTERED_USER_email` ,`CAMPINGSPOT_campingspot_nr` FROM `campingspot_member`,paid_visitor,registered_user WHERE `PAID_VISITOR_REGISTERED_USER_email`=REGISTERED_USER_email and REGISTERED_USER_email=email and `CAMPINGSPOT_campingspot_nr`=" + code.ToString() + ";";
+            //Here will be generated information regarding one spot
+
+            String sql = "SELECT fname,lname,`PAID_VISITOR_REGISTERED_USER_email` ,`CAMPINGSPOT_campingspot_nr` FROM `campingspot_member`,paid_visitor,registered_user WHERE `PAID_VISITOR_REGISTERED_USER_email`=REGISTERED_USER_email and REGISTERED_USER_email=email and `CAMPINGSPOT_campingspot_nr`=" + spot.ToString() + ";";
             MySqlCommand commandspecspot = new MySqlCommand(sql,connection);
 
             List<CampSpot> peopleintthatspot=new List<CampSpot>();
@@ -104,6 +105,8 @@ namespace StatusApp
 
         public List<int> FreeSpots() 
         {
+            //This method will display the free spots
+
             String sql = "SELECT `campingspot_nr` FROM `campingspot` WHERE campingspot_nr NOT IN (select campingspot_campingspot_nr from campingspot_member)";
             MySqlCommand commandfreespot = new MySqlCommand(sql, connection);
 
