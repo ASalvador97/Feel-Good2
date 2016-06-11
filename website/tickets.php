@@ -59,7 +59,7 @@
 
   <tr>
     <td><div align="right">E-mail*:</div></td>
-    <td><input type="email" name="email" /></td>
+    <td><input type="text" name="email" /></td>
   </tr>
 
  <tr>
@@ -67,10 +67,9 @@
     <td><input type="password" name="password" /></td>
   </tr>
   
-   <tr>
-    <td><div align="right">Confirm password*:</div></td>
-    <td><input type="password" name="cpassword" /></td>
-  </tr>
+
+  
+   
   
    
   

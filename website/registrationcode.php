@@ -1,15 +1,26 @@
 <?php
-$servername = "athena01.fhict.local";
-$username = "dbi338468";
-$password = "Xm6y5xuH99";
-$dbname = "dbi338468";
+require_once 'psl-config.php'; 
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	
-	    // insert a row
+ // Required field names
+$required = array('fname', 'lname', 'dob', 'gender', 'password', 'email','country', 'phone', 'city');
+
+// Loop over field names, make sure each one exists and is not empty
+$error = false;
+foreach($required as $field) 
+{
+  if (empty($_POST[$field])) 
+  {
+    $error = true;
+  }
+}
+if ($error) 
+  {
+  header("location: register_error.php");
+  }  
+  else{
+
+    
+	    
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $dob =$_POST['dob'];
@@ -18,30 +29,28 @@ try {
     $country =  $_POST['country'];
     $city =$_POST['city'];
     $email =  $_POST['email'];
-    $passwordd =$_POST['password'];
-	$cpasswordd =$_POST['cpassword'];
-    
-	if($passwordd==$cpasswordd){
-    // prepare sql and bind parameters
-    $stmt = $conn->prepare("insert into `registered_user` (`fname`, `lname`, `dob`,`gender`,`phone`,`country`,`city`,`email`,`password`) values ('$fname','$lname','$dob','$gender','$phone','$country','$city','$email','$passwordd')");
-    $stmt->execute();
-	echo "<div class=general><p>Congrats man, you are registered</p></div>";}
+    $passwordd =password_hash(mysqli_real_escape_string($con,$_POST['password']), PASSWORD_BCRYPT);
 	
-	else {
-		
-		$message = "passwords do not match";
-echo "<script type='text/javascript'>alert('$message');</script>";
+    $checkemail =mysqli_query($con, "Select * from registered_user where email = '$email'");
 
-	}
+if($checkemail->num_rows !=0)
+{
+header("location: index.php");
+}
+else {
+	
+    // prepare sql and bind parameters
+    $registerquery = mysqli_query($con,"INSERT INTO registered_user (fname, lname, dob,gender,phone,country,city,email,password) VALUES	 ('$fname','$lname','$dob','$gender','$phone','$country','$city','$email','$passwordd')");
+    
+	echo "<div class=general><p>Congrats man, you are registered</p></div>";
+	
+	
 	
 
 	include_once("header.php");
 	
 	include_once("footer.php");
     }
-catch(PDOException $e)
-    {
-    echo "Error: " . $e->getMessage();
-    }
-$conn = null;
+	  }
+
 ?>
