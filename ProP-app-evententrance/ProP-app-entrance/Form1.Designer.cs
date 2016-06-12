@@ -35,6 +35,7 @@
             this.lbphone = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbCamping = new System.Windows.Forms.Label();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbBracelet = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,13 +44,13 @@
             this.lbName = new System.Windows.Forms.Label();
             this.btnSync = new System.Windows.Forms.Button();
             this.lb5 = new System.Windows.Forms.Label();
-            this.lbStatus = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbBarcode = new System.Windows.Forms.TextBox();
             this.tbBraceletCode = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
+            this.lbtag = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,6 +126,17 @@
             this.lbCamping.Size = new System.Drawing.Size(19, 25);
             this.lbCamping.TabIndex = 14;
             this.lbCamping.Text = "-";
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.Location = new System.Drawing.Point(12, 11);
+            this.lbStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(73, 25);
+            this.lbStatus.TabIndex = 15;
+            this.lbStatus.Text = "Status";
             // 
             // label2
             // 
@@ -212,17 +224,6 @@
             this.lb5.TabIndex = 14;
             this.lb5.Text = "Bracelet code:";
             // 
-            // lbStatus
-            // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatus.Location = new System.Drawing.Point(12, 11);
-            this.lbStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(73, 25);
-            this.lbStatus.TabIndex = 15;
-            this.lbStatus.Text = "Status";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -270,11 +271,23 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Event entrance:";
             // 
+            // lbtag
+            // 
+            this.lbtag.AutoSize = true;
+            this.lbtag.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtag.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbtag.Location = new System.Drawing.Point(724, 397);
+            this.lbtag.Name = "lbtag";
+            this.lbtag.Size = new System.Drawing.Size(41, 55);
+            this.lbtag.TabIndex = 21;
+            this.lbtag.Text = "-";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1098, 650);
+            this.Controls.Add(this.lbtag);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbBraceletCode);
@@ -316,6 +329,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbexists;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbtag;
     }
 }
 
