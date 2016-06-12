@@ -42,7 +42,8 @@ else {
     // prepare sql and bind parameters
     $registerquery = mysqli_query($con,"INSERT INTO registered_user (fname, lname, dob,gender,phone,country,city,email,password) VALUES	 ('$fname','$lname','$dob','$gender','$phone','$country','$city','$email','$passwordd')");
     
-	echo "<div class=general><p>Congrats man, you are registered</p></div>";
+	
+	header("location: login.php");
 	
 	
 	
