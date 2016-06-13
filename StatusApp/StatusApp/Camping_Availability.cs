@@ -35,12 +35,6 @@ namespace StatusApp
             String sql1 = "SELECT count(*) FROM `campingspot` WHERE `campingspot_nr` not in(select `CAMPINGSPOT_campingspot_nr` from campingspot_member)";
             MySqlCommand commandfree = new MySqlCommand(sql1, connection);
 
-            String sql2 = "SELECT count(*) FROM `entered_visitor` WHERE `Camping_status`='in'";
-            MySqlCommand commandinside = new MySqlCommand(sql2, connection);
-
-            String sql3 = "SELECT count(*) FROM `entered_visitor` WHERE `Camping_status`='out'";
-            MySqlCommand commandoutside = new MySqlCommand(sql3, connection);
-
             String sql4 = "SELECT count(`PAID_VISITOR_REGISTERED_USER_email`) FROM campingspot_member";
             MySqlCommand commandpeoplewithspot = new MySqlCommand(sql4, connection);
 
