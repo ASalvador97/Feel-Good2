@@ -29,8 +29,9 @@ require_once 'psl-config.php'?>
 	{
 		echo 
 		'
-		<li><a href="logout.php">LOG OUT</a></li>
 		<li><a href="myaccount.php">MY ACCOUNT</a></li>
+		<li><a href="logout.php">LOG OUT</a></li>
+		
 		';
 	}
  ?>

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Phidgets;
+using Phidgets.Events;
 
 namespace ProP_app_entrance
 {
@@ -14,12 +16,49 @@ namespace ProP_app_entrance
     {
         DataHelper mydatahelper;
         Visitor v;
+        private RFID myRFIDReader;
         public Form1()
         {
             mydatahelper = new DataHelper();
             InitializeComponent();
+
+            try
+            {
+                myRFIDReader = new RFID();
+                myRFIDReader.Tag += new TagEventHandler(ProcessThisTag);
+
+                myRFIDReader.open();
+                myRFIDReader.waitForAttachment(3000);
+                myRFIDReader.Antenna = true;
+                myRFIDReader.LED = true;
+                lbtag.Text= "READY TO GO";
+            }
+            catch (PhidgetException) { lbtag.Text = "ERROR AT STARTUP"; }
+
         }
 
+        private void ProcessThisTag(object sender, TagEventArgs e)
+        {
+            try
+            {
+                if (mydatahelper.SyncBracelet(e.Tag, v.Email, Convert.ToString(1), "N", ""))
+                {
+                    this.panel1.BackColor = Color.Lavender;
+                    this.lbBracelet.Text = e.Tag;
+                    this.tbBraceletCode.Text = e.Tag;
+                    lbtag.Text = "SUCCESS";
+                }
+                else
+                {
+                    this.panel1.BackColor = Color.IndianRed;
+                    lbtag.Text = "ERROR";
+                }
+            }
+            catch(NullReferenceException)
+            {
+                lbtag.Text = "NO VISITOR SELECTED";
+            }
+        }
         private void tbBraceletcode_TextChanged(object sender, EventArgs e)
         {
 
@@ -35,6 +74,8 @@ namespace ProP_app_entrance
             this.lbEmail.Text = v.Email;
             this.lbphone.Text = v.Phone;
             this.lbexists.Visible = false;
+            this.lbtag.Text = "READY";
+            this.tbBraceletCode.Text = "";
 
             if (v.Campspot != 0)
             {

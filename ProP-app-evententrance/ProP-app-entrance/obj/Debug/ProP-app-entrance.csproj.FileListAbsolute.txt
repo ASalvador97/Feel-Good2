@@ -33,3 +33,4 @@ C:\Users\kivistik.liis\Documents\ProP\ProP-app-evententrance\ProP-app-evententra
 C:\Users\kivistik.liis\Documents\ProP\ProP-app-evententrance\ProP-app-evententrance\ProP-app-entrance\obj\Debug\ProP_app_entrance.Properties.Resources.resources
 C:\Users\kivistik.liis\Documents\ProP\ProP-app-evententrance\ProP-app-evententrance\ProP-app-entrance\obj\Debug\ProP-app-entrance.csproj.GenerateResource.Cache
 C:\Users\kivistik.liis\Documents\ProP\ProP-app-evententrance\ProP-app-evententrance\ProP-app-entrance\bin\Debug\MySql.Data.dll
+C:\Users\kivistik.liis\Documents\ProP\ProP-app-evententrance\ProP-app-evententrance\ProP-app-entrance\bin\Debug\Phidget21.NET.dll
