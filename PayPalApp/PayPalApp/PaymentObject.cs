@@ -7,14 +7,14 @@ namespace PayPalApp
 {
     public class PaymentObject
     {
-        private int id;
+        private String id;
         private double money;
         private int nrOfDeposits;
         private DateTime start;
         private DateTime end;
         private String bankAccount;
 
-        public int Id { get { return id; } }
+        public String Id { get { return id; } }
         public double Money { get { return money; } }
         public int NrOfDeposits { get { return this.nrOfDeposits; } }
         public DateTime Start { get { return this.start; } }
@@ -22,7 +22,7 @@ namespace PayPalApp
         public String BankAccount { get { return this.bankAccount; } }
 
 
-        public PaymentObject(String ba,DateTime st,DateTime en, int nr, int i,double mon)
+        public PaymentObject(String ba,DateTime st,DateTime en, int nr, String i,double mon)
         {
             this.bankAccount = ba;
             this.start = st;
