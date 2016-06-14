@@ -11,6 +11,7 @@ namespace ProP_app_entrance
     public class DataHelper
     {
         public MySqlConnection connection;
+        Visitor myVisitor = null;
 
         public DataHelper()
         {
@@ -31,7 +32,7 @@ namespace ProP_app_entrance
             MySqlCommand command = new MySqlCommand(initsql, connection);
 
            
-            Visitor myVisitor = null;
+            
 
             try
             {
@@ -41,7 +42,7 @@ namespace ProP_app_entrance
                 while (reader.Read())
                 {
                     myVisitor = new Visitor(Convert.ToString(reader["fname"]), Convert.ToString(reader["lname"]),
-                        Convert.ToString(reader["email"]), Convert.ToString(reader["phone"]), Convert.ToInt32(reader["ifnull(cm.CAMPINGSPOT_campingspot_nr,0)"]));               
+                        Convert.ToString(reader["email"]), Convert.ToString(reader["phone"]), Convert.ToInt32(reader["ifnull(cm.CAMPINGSPOT_campingspot_nr,0)"]), Convert.ToString(reader["barcode"]));               
 
                 }
             }
@@ -67,6 +68,40 @@ namespace ProP_app_entrance
                 connection.Open();
                 int nrOfRecordsChanged = command.ExecuteNonQuery();
                 return true;
+            }
+            catch
+            {
+                return false; //which means the try-block was not executed succesfully, so  . . .
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
+        public bool CheckBarcode(String barcode)
+        {
+
+            String sql = "SELECT pv.barcode, ifnull(ev.chip_id,0), pv.REGISTERED_USER_email from paid_visitor pv left join entered_visitor ev on pv.REGISTERED_USER_email=ev.PAID_VISITOR_REGISTERED_USER_email WHERE pv.barcode='"+barcode+"'";
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            string chip = "";
+
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    chip = Convert.ToString(reader["ifnull(ev.chip_id,0)"]);
+                   
+                }
+                if (chip == "0")
+                {
+                    return true;
+                }
+                else { return false; }
             }
             catch
             {

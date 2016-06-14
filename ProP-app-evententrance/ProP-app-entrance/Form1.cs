@@ -44,9 +44,13 @@ namespace ProP_app_entrance
                 if (mydatahelper.SyncBracelet(e.Tag, v.Email, Convert.ToString(1), "N", ""))
                 {
                     this.panel1.BackColor = Color.Lavender;
+                    this.lbBracelet.Text = "";
+                    this.tbBraceletCode.Text = "";
+                        this.lbbarcode.Text = v.Barcode;
                     this.lbBracelet.Text = e.Tag;
-                    this.tbBraceletCode.Text = e.Tag;
                     lbtag.Text = "SUCCESS";
+                    this.tbBarcode.Text = "";
+
                 }
                 else
                 {
@@ -67,26 +71,38 @@ namespace ProP_app_entrance
         private void button1_Click(object sender, EventArgs e)
         {
            // timer1.Enabled = true;
-            try 
-            { 
-            v= mydatahelper.GetVisitor(tbBarcode.Text);
-            this.lbName.Text = v.Fname + " " + v.Lname;
-            this.lbEmail.Text = v.Email;
-            this.lbphone.Text = v.Phone;
-            this.lbexists.Visible = false;
-            this.lbtag.Text = "READY";
-            this.tbBraceletCode.Text = "";
-
-            if (v.Campspot != 0)
+            try
             {
-                this.lbCamping.Text = "YES:  nr: " + v.Campspot;
-                this.panel1.BackColor = Color.Green;
+                bool check = mydatahelper.CheckBarcode(tbBarcode.Text);
+                if (check)
+                {
+                    v = mydatahelper.GetVisitor(tbBarcode.Text);
+
+                    this.lbName.Text = v.Fname + " " + v.Lname;
+                    this.lbEmail.Text = v.Email;
+                    this.lbphone.Text = v.Phone;
+                    this.lbbarcode.Text = v.Barcode;
+                    this.lbtag.Text = "READY";
+                    this.tbBraceletCode.Text = "";
+
+                    if (v.Campspot != 0)
+                    {
+                        this.lbCamping.Text = "YES:  nr: " + v.Campspot;
+                        this.panel1.BackColor = Color.Green;
+                    }
+                    if (v.Campspot == 0)
+                    {
+                        this.lbCamping.Text = "NO";
+                        this.panel1.BackColor = Color.Blue;
+                    }
+                }
+                else
+                {
+                    this.lbtag.Text = "WRONG BARCODE";
+                    this.panel1.BackColor = Color.Red;
+                }
             }
-             if (v.Campspot==0)
-            { 
-                this.lbCamping.Text = "NO";
-                this.panel1.BackColor = Color.Blue;
-            }}
+           
 
             catch
             {
@@ -96,7 +112,7 @@ namespace ProP_app_entrance
                 this.lbphone.Text = "-";
                 this.lbBracelet.Text = "-";
                 this.lbCamping.Text = "-";
-                this.lbexists.Visible = true;
+                this.lbbarcode.Text = "-";
 
             }
 

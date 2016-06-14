@@ -10,22 +10,22 @@ namespace PROP_leaving_event
 
         private String  email, chipid;
         //private bool hasleftevent, 
-            private bool hasgoodstoreturn;
+        //    private bool hasgoodstoreturn;
         
 
        
         public String Email { get { return email; } }
         public String ChipId {get { return chipid; }}
         //public bool HasLeftEvent { get { return hasleftevent; } }
-        public bool HasGoodsToReturn { get { return hasgoodstoreturn; } }
+        //public bool HasGoodsToReturn { get { return hasgoodstoreturn; } }
         
-        public Visitor(String e, string chip,  bool mustreturn)
+        public Visitor(String e, string chip)
         {
             
             this.email = e;
         this.chipid= chip;
            // this.hasleftevent = hasleft;
-            this.hasgoodstoreturn = mustreturn;
+           // this.hasgoodstoreturn = mustreturn;
            
         }
 
