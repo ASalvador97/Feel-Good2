@@ -16,8 +16,17 @@ require_once 'psl-config.php';
   if (isset($_SESSION['Email'])){
 	  $email = $_SESSION['Email'];
 	  $userquery = mysqli_query($con, "SELECT * FROM registered_user WHERE email='$email'") or die ("Could not complete query");
+	  $paidquery = mysqli_query($con, "SELECT * FROM paid_visitor WHERE REGISTERED_USER_email='$email'") or die ("Could not complete query");
+	  
+	  while($row = mysqli_fetch_array($paidquery, MYSQLI_ASSOC)){
+		  
+	    $barcode= $row['barcode'];
+		$balance= $row['balance_left'];
+		$registeredemail = $row['REGISTERED_USER_email'];
+		$eventid = $row['EVENt_event-id'];
 	  
 	  
+	  }
 	  
 	  while($row = mysqli_fetch_array($userquery, MYSQLI_ASSOC)){
 		  $dbemail = $row['email'];
@@ -124,15 +133,20 @@ function openTab(evt, tabName) {
    <div class="tabcontent" id="userinfo">
    <div class="userinfo" >
 	<form name="user" action="" onsubmit="return validateForm()" method="post" >
-<table width="45%" border="0" align="left" cellpadding="10" cellspacing="0"  >
-        <tr><td><h3>Hello <?php echo $fname ?> <?php echo $lname ?>!</h3></td></tr>
-		<tr><td> Email:</td><td><?php echo $dbemail; ?></td></tr>
+	  <h2>  Hello <?php echo $fname ?> <?php echo $lname ?>!</h2>
+    <table width="45%" border="0" align="left" cellpadding="10" cellspacing="0"  >
+        
+	  <tr><td> Email:</td><td><?php echo $dbemail; ?></td></tr>
 	  <tr><td> Phone Number:</td><td><?php echo $phone; ?></td></tr>
 	  <tr><td> Gender:</td><td><?php echo $gender; ?></td></tr>
 	  <tr><td> Country:</td><td><?php echo $country; ?></td></tr>
-	  <tr><td> City:</td><td><?php echo $city; ?></td></tr><br><br>
+	  <tr><td> City:</td><td><?php echo $city; ?></td></tr><br><br>	  
+	  <tr><td> Ticket #:</td><td><IMG src= https://www.barcodesinc.com/generator_files/image.php?code=<?php echo $barcode; ?>&style=197&type=C128B&width=200&height=50&xres=1&font=3></td></tr>
 	  
 	  </table></form>
+	  
+	 
+	
 	
 	<div class="update">
 	<form name="updatebalance" action="" onsubmit="return validateForm()" method="post" >
@@ -180,7 +194,7 @@ function openTab(evt, tabName) {
   <tr>
     <td colspan="2">
 		<div align="left">
-		<h3>Buy your ticket here! </h3>	<br>
+		<h2>Buy your ticket here! </h2>	<br>
                     <h3>Ticket price: 60 eur for whole event.</h3>
                     <h4>More information available at <a href="info.php">Info</a></h4>  
 				
@@ -211,8 +225,14 @@ function openTab(evt, tabName) {
   <tr>
     <td colspan="2">
 		<div align="center">
-		<h3>You have booked your ticket! </h3>	<br>
+		<h2>You have booked your ticket! </h2>	<br>
+		<h4>We will send you confirmation on your e-mail!<br>
+		When coming to the event, you are obliged to show the confirmation at the gates - you will receive a bracelet at the entrance.</h4>
+		
+		
               	
+            <IMG src= https://www.barcodesinc.com/generator_files/image.php?code=<?php echo $barcode; ?>&style=197&type=C128B&width=200&height=50&xres=1&font=3></IMG>
+                    <a href="" download></a>
 	    </div>
 		</tr>
     

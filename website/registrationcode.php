@@ -15,7 +15,11 @@ foreach($required as $field)
 }
 if ($error) 
   {
-  header("location: register_error.php");
+  //header("location: register_error.php");
+echo "<script>
+alert('Fill in all the fields please!');
+window.location.href='tickets.php';
+</script>";
   }  
   else{
 
@@ -35,22 +39,26 @@ if ($error)
 
 if($checkemail->num_rows !=0)
 {
-header("location: index.php");
+//header("location: tickets.php");
+echo "<script>
+alert('E-mail already exists!');
+window.location.href='tickets.php';
+</script>";
 }
 else {
 	
     // prepare sql and bind parameters
     $registerquery = mysqli_query($con,"INSERT INTO registered_user (fname, lname, dob,gender,phone,country,city,email,password) VALUES	 ('$fname','$lname','$dob','$gender','$phone','$country','$city','$email','$passwordd')");
     
-	
-	header("location: login.php");
-	
-	
-	
+	echo "<script>
 
-	include_once("header.php");
+window.location.href='login.php';
+</script>";
+	// header("location: login.php");
 	
-	include_once("footer.php");
+	// include_once("header.php");
+	
+	// include_once("footer.php");
     }
 	  }
 
