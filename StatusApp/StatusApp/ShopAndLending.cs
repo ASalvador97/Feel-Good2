@@ -65,7 +65,7 @@ namespace StatusApp
             // Information regarding a lended product from the pc-doctor(the lended time and the money gained by the rent of this item)
 
 
-            String sql = "SELECT item_id,name,price_hour,deposit,in_stock, count(*),ifnull(sum(TIMESTAMPDIFF(HOUR,time_borrowed,time_returned)),0) FROM `lend_item`, lending_line WHERE `LEND_ITEM_item_id`=item_id group by item_id,name,price_hour,deposit,in_stock";
+            String sql = "SELECT item_id,name,price_hour,deposit, count(*),ifnull(sum(TIMESTAMPDIFF(HOUR,time_borrowed,time_returned)),0) FROM `lend_item`, lending_line WHERE `LEND_ITEM_item_id`=item_id group by item_id,name,price_hour,deposit";
             MySqlCommand commandlending = new MySqlCommand(sql,connection);
 
             List<LendingItem> lendings = new List<LendingItem>();
@@ -80,7 +80,7 @@ namespace StatusApp
                 {
                     time = Convert.ToInt32(reader["ifnull(sum(TIMESTAMPDIFF(HOUR,time_borrowed,time_returned)),0)"]);
                     pricehour = Convert.ToDouble(reader["price_hour"]);
-                    lendings.Add(new LendingItem(Convert.ToInt32(reader["item_id"]), Convert.ToString(reader["name"]), Convert.ToDouble(reader["price_hour"]), Convert.ToDouble(reader["deposit"]), Convert.ToInt32(reader["in_stock"]), time,time*pricehour));
+                    lendings.Add(new LendingItem(Convert.ToInt32(reader["item_id"]), Convert.ToString(reader["name"]), Convert.ToDouble(reader["price_hour"]), Convert.ToDouble(reader["deposit"]), time,time*pricehour));
                 }
 
                              

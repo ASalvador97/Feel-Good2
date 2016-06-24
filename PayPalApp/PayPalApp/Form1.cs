@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System;                   
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -87,7 +87,7 @@ namespace PayPalApp
             try
             {
                 connection.Open();
-                int c=command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
 
             }
             catch
@@ -112,7 +112,7 @@ namespace PayPalApp
 
                 if(reader.Read())
                 {
-                    String sqlupdatebalance = "UPDATE `dbi338468`.`paid_visitor` SET `balance_left` = '" + (obj.Money + Convert.ToInt32(reader["balance_left"])) + "' WHERE `REGISTERED_USER_email` IN(select PAID_VISITOR_REGISTERED_USER_email from entered_visitor where `chip_id` = '" + obj.Id + "')";
+                    String sqlupdatebalance = "UPDATE `dbi338468`.`paid_visitor` SET `balance_left` = '" + (obj.Money + Convert.ToDouble(reader["balance_left"])) + "' WHERE `REGISTERED_USER_email` IN(select PAID_VISITOR_REGISTERED_USER_email from entered_visitor where `chip_id` = '" + obj.Id + "')";
                     reader.Close();
 
                     //Updating the balance with the information from the logfile

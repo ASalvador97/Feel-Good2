@@ -65,37 +65,21 @@ namespace StatusApp
         }
 
         
-        public void TotalAmountOfEventAccountsAndProfit(out double totalbalance,out double totalprofit)
+        public void TotalAmountOfEventAccountsAndProfit(out double totalbalance)
         {
-            //This method calculated the total money from all the event-accounts, the amount of money from all items sold in the shops plus the one from all lended items
+            //This method calculated the total money from all the event-accounts
 
             String sql = "SELECT ifnull(Sum(balance_left),0) FROM paid_visitor";
             MySqlCommand command = new MySqlCommand(sql, connection);
 
-            String sql1 = "SELECT ifnull(Sum(total_price),0) FROM shop";
-            MySqlCommand commandprofitshop = new MySqlCommand(sql1, connection);
-
-            String sql2 = "SELECT ifnull(Sum(final_price),0) FROM lending";
-            MySqlCommand commandprofitlend = new MySqlCommand(sql2, connection);
-
-            double shop=0,lend=0;
             totalbalance = -1;
-            totalprofit = -1;
 
             try
             {
                 connection.Open();
                 totalbalance = Convert.ToDouble(command.ExecuteScalar());
-
-                shop = Convert.ToDouble(commandprofitshop.ExecuteScalar());
-
-                lend = Convert.ToDouble(commandprofitlend.ExecuteScalar());
-
-                totalprofit = shop + lend;
-
-                
             }
-            catch(MySqlException)
+            catch (MySqlException)
             {
                 MessageBox.Show("Something went wrong with the connection");
             }

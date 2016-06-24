@@ -77,6 +77,8 @@
             this.tbrevenue = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbtotal = new System.Windows.Forms.TextBox();
             this.menu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -98,6 +100,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.tbtotal);
+            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.tbnotentered);
             this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.label6);
@@ -584,6 +588,24 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(7, 395);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(599, 29);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "The total profit (tickets, camping spots, shops/lendings:";
+            // 
+            // tbtotal
+            // 
+            this.tbtotal.Location = new System.Drawing.Point(601, 399);
+            this.tbtotal.Name = "tbtotal";
+            this.tbtotal.Size = new System.Drawing.Size(121, 26);
+            this.tbtotal.TabIndex = 27;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -655,6 +677,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox tbrevenuee;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox tbtotal;
+        private System.Windows.Forms.Label label7;
     }
 }
 

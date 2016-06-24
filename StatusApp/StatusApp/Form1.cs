@@ -50,10 +50,6 @@ namespace StatusApp
                 MessageBox.Show("No device connected or the dll is wrong!");
             }
 
-
-
-
-
             //Filling the comboboxes with the items from the shops and the pc-doctor
             foreach (ShopProduct s in market.ShopItems())
             {
@@ -114,13 +110,14 @@ namespace StatusApp
 
         }
         private void timer1_Tick(object sender, EventArgs e)
-        {//Timer to keep the statistics data up-to-date
+        {
+            //Timer to keep the statistics data up-to-date
 
             //general
             int numberOfVisitors;
             int numberOfEntered;
             int numberOfLeft;
-            double totalbalance, totalprofit;
+            double totalbalance, totalprofit=0;
 
             gen.GeneralStatistics(out numberOfVisitors, out numberOfEntered, out numberOfLeft);
 
@@ -130,10 +127,21 @@ namespace StatusApp
             tbnotentered.Text = (numberOfVisitors - numberOfEntered).ToString();
             tbwholeft.Text = numberOfLeft.ToString();
 
-            gen.TotalAmountOfEventAccountsAndProfit(out totalbalance, out totalprofit);
+            
+            //profit
+            foreach (ShopProduct s in market.ShopItems())
+            {
+                totalprofit += s.Revenue;
+            }
+            foreach (LendingItem s in market.LendItems())
+            {
+                totalprofit += s.Revenue;
+            }
+            gen.TotalAmountOfEventAccountsAndProfit(out totalbalance);
 
             tbtotalamount.Text = totalbalance.ToString();
             tbmoney.Text = totalprofit.ToString();
+
 
             //camping availability
 
@@ -149,6 +157,8 @@ namespace StatusApp
             tbfree.Text = free.ToString();
             tbpeoplewithspot.Text = peoplewithspot.ToString();
             tbmoneyfromspots.Text = money.ToString();
+
+            tbtotal.Text=(numberOfVisitors*60+Convert.ToInt32(tbmoneyfromspots.Text)+totalprofit).ToString();
 
         }
 
