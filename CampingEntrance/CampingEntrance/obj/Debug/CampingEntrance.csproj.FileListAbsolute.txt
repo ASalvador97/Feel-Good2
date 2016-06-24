@@ -1,0 +1,10 @@
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.csprojResolveAssemblyReference.cache
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.Form1.resources
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.Properties.Resources.resources
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.csproj.GenerateResource.Cache
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\bin\Debug\CampingEntrance.exe
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\bin\Debug\CampingEntrance.pdb
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\bin\Debug\MySql.Data.dll
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\bin\Debug\Phidget21.NET.dll
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.exe
+E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.pdb
