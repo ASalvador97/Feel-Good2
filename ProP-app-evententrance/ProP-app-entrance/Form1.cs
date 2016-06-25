@@ -41,7 +41,7 @@ namespace ProP_app_entrance
         {
             try
             {
-                if (mydatahelper.SyncBracelet(e.Tag, v.Email, Convert.ToString(1), "N", ""))
+                if (mydatahelper.SyncBracelet(e.Tag, v.Email, Convert.ToString(1), "N"))
                 {
                     this.panel1.BackColor = Color.Lavender;
                     this.lbBracelet.Text = "";
@@ -125,7 +125,7 @@ namespace ProP_app_entrance
         private void btnSync_Click(object sender, EventArgs e)
         {
             if (
-             mydatahelper.SyncBracelet(tbBraceletCode.Text, v.Email, Convert.ToString(1), "N", "") )
+             mydatahelper.SyncBracelet(tbBraceletCode.Text, v.Email, Convert.ToString(1), "N") )
             {
                 this.panel1.BackColor = Color.Lavender;
                 this.lbBracelet.Text = tbBraceletCode.Text;

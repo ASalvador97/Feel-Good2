@@ -57,10 +57,10 @@ namespace ProP_app_entrance
             return myVisitor;
         }
 
-        public bool SyncBracelet(String chipid, string email, string eventid, string hasleftevent, string campingstatus)
+        public bool SyncBracelet(String chipid, string email, string eventid, string hasleftevent)
         {
 
-            String sql = "INSERT INTO `dbi338468`.`entered_visitor` (`chip_id`, `PAID_VISITOR_REGISTERED_USER_email`, `PAID_VISITOR_EVENT_event_id`, `has_left_event`, `Camping_status`) VALUES ('" + chipid + "', '" + email + "', '" + eventid + "', '" + hasleftevent + "', '" + campingstatus + "');";
+            String sql = "INSERT INTO `dbi338468`.`entered_visitor` (`chip_id`, `PAID_VISITOR_REGISTERED_USER_email`, `PAID_VISITOR_EVENT_event_id`, `has_left_event`) VALUES ('" + chipid + "', '" + email + "', '" + eventid + "', '" + hasleftevent+ "');";
             MySqlCommand command = new MySqlCommand(sql, connection);
 
             try
