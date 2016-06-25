@@ -20,7 +20,10 @@
 	   header("Location: myaccount.php"); 
   }
 
-  else echo "Couldnt log in"; 
+  else echo "<script>
+alert('Incorrect Email or Password!');
+window.location.href='login.php';
+</script>";
  
 
 ?>

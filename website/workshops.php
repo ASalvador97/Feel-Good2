@@ -14,7 +14,7 @@
     
     
     <ul class="workshop">
-        <li><h3>25TH OF JUNE</h3></li>
+        <li><h3>27TH OF AUGUST</h3></li>
         <li>12.00 Dj Prod</li>
         <li>13.00 Flupke</li>
         <li>14.00 Dj Prod</li>
@@ -22,7 +22,7 @@
     </ul>
     
     <ul class="workshop">
-        <li><h3>26TH OF JUNE</h3></li>
+        <li><h3>28TH OF AUGUST</h3></li>
         <li>11.00 Linh Boai</li>
         <li>12.00 Flupke</li>
         <li>13.00 Dj Prod</li>
@@ -31,5 +31,6 @@
    
     
     </div>
-
+ <div class="foot" align="right">
+  <?php include_once("footer.php");?></div>
 

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.lb3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbbarcode = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lbphone = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbCamping = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.lbtag = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbbarcode = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(587, 390);
             this.panel1.TabIndex = 6;
+            // 
+            // lbbarcode
+            // 
+            this.lbbarcode.AutoSize = true;
+            this.lbbarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbbarcode.Location = new System.Drawing.Point(157, 233);
+            this.lbbarcode.Name = "lbbarcode";
+            this.lbbarcode.Size = new System.Drawing.Size(19, 25);
+            this.lbbarcode.TabIndex = 18;
+            this.lbbarcode.Text = "-";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(25, 226);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 25);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Barcode:";
             // 
             // lbphone
             // 
@@ -272,26 +292,6 @@
             this.lbtag.Size = new System.Drawing.Size(41, 55);
             this.lbtag.TabIndex = 21;
             this.lbtag.Text = "-";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 226);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 25);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Barcode:";
-            // 
-            // lbbarcode
-            // 
-            this.lbbarcode.AutoSize = true;
-            this.lbbarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbbarcode.Location = new System.Drawing.Point(157, 233);
-            this.lbbarcode.Name = "lbbarcode";
-            this.lbbarcode.Size = new System.Drawing.Size(19, 25);
-            this.lbbarcode.TabIndex = 18;
-            this.lbbarcode.Text = "-";
             // 
             // Form1
             // 

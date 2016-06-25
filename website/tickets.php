@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php include_once("header.php");?>
+<?php include_once("header.php");
+require_once 'psl-config.php'; 
+?>
 <div class="general">
     <div class="tickets">
     <style type="text/css">  
@@ -10,7 +12,7 @@
     </style>
    
          
-        <form name="reg" action="registrationcode.php" onsubmit="return validateForm()" method="post" >
+        <form action="registrationcode.php"  method="POST" >
 <table width="50%" border="0" align="left" cellpadding="10" cellspacing="0"  >
   <tr>
     <td colspan="2">
@@ -33,13 +35,19 @@
   
   <tr>
   <td><div align="right">Date Of Birth*:</div></td> 
-  <td><input type="date" name="dob" max="2000-12-31"/></td>
+  <td><input type="date" name="dob" max="2000-08-26" /></td>
   </tr>
   
  
     <tr>
-        <td><div align="right">Gender*:</div></td> 
-        <td><input type="text" name="gender" /></td>
+        <td><div align="right">Gender:</div></td>
+		<td><select name="formgender">
+		
+		<option value="M" > Male </option>
+		<option value="F" > Female </option>
+		
+	      </select></td> 
+        
     </tr>
   
  <tr>
@@ -67,15 +75,17 @@
     <td><input type="password" name="password" /></td>
   </tr>
   
-
-  
+  <tr>
+    <td><div align="right">Confirm password*:</div></td>
+    <td><input type="password" name="cpassword" /></td>
+  </tr>
    
   
    
   
   <tr>
     <td><div align="right"></div></td>
-    <td><input name="Register" type="submit" value="Register" /></td>
+    <td><input type="submit" value="Register" /></td>
   </tr>
 </table>
 </form>
@@ -87,8 +97,8 @@
         <p>It is only possible to buy ticket for the whole weekend.
             <br>
             The price is 60 euros per person, after registration you will have the opportunity to pay.<br><br>
-            You can pay via Internet, we have provided you with PayPal and IDeal options. If your payment has been successful you will receive a confirmation 
-            on your e-mail and you will be registered to our event! </p>
+            You can pay via Internet, we have provided you with PayPal and IDeal options. If your payment has been successful you will 
+            be registered to our event! </p>
         <h4>CAMPING</h4>
             <p>One campingspot can have maximum 6 people. The price is 30 euros for the campingspot and 20 euros for every person.
                 You can choose your campingspot after signing in with your account - you will see free campingspots on map and you can choose the preferred one.
@@ -102,4 +112,5 @@
        
     </div>
     </div>
-
+ <div class="foot" align="right">
+  <?php include_once("footer.php");?></div>

@@ -1,22 +1,14 @@
-// <?php
-// require_once 'psl-config.php';
-
-// if(empty ($_SESSION['LoggedIn']))
-    // header("Location: index.php");
-
-// include_once("header.php");
-// ?>
-
-
-
-
 <?php
 require_once 'psl-config.php';
 
   if (isset($_SESSION['Email'])){
 	  $email = $_SESSION['Email'];
+	  $zero = 0;
 	  $userquery = mysqli_query($con, "SELECT * FROM registered_user WHERE email='$email'") or die ("Could not complete query");
 	  $paidquery = mysqli_query($con, "SELECT * FROM paid_visitor WHERE REGISTERED_USER_email='$email'") or die ("Could not complete query");
+	  
+	  
+	  
 	  
 	  while($row = mysqli_fetch_array($paidquery, MYSQLI_ASSOC)){
 		  
@@ -40,9 +32,7 @@ require_once 'psl-config.php';
 	      }
 		  
 		  $email     = mysql_real_escape_string($email);
-   //$query = "SELECT * from paid_visitor where email='$dbemail'";
-//$result = mysql_query($query);
-//if(mysql_num_rows($result) == null)
+  
 	
 
 //check if person is in paid_visitor, if he is, hide the div to buy tickets. if he is not, hide the div saying "you already have tickets"
@@ -110,14 +100,15 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 </script>
+
 <html>
 <body>
-
-
-
+ <div class="foot" align="right">
+  <?php include_once("footer.php");?></div>
 
 <div class="general">
 <ul class="tab">
+    <body onload="openTab(event, 'userinfo')">
   <li><a href="#" class="tablinks" onclick="openTab(event, 'userinfo')">User Info</a></li>
   <li><a href="#" class="tablinks" onclick="openTab(event, 'tickets')">Tickets</a></li>
   <li><a href="#" class="tablinks" onclick="openTab(event, 'camping')">Camping</a></li>
@@ -133,7 +124,7 @@ function openTab(evt, tabName) {
    <div class="tabcontent" id="userinfo">
    <div class="userinfo" >
 	<form name="user" action="" onsubmit="return validateForm()" method="post" >
-	  <h2>  Hello <?php echo $fname ?> <?php echo $lname ?>!</h2>
+	  <h3>  Hello <?php echo $fname ?> <?php echo $lname ?>!</h3>
     <table width="45%" border="0" align="left" cellpadding="10" cellspacing="0"  >
         
 	  <tr><td> Email:</td><td><?php echo $dbemail; ?></td></tr>
@@ -141,7 +132,7 @@ function openTab(evt, tabName) {
 	  <tr><td> Gender:</td><td><?php echo $gender; ?></td></tr>
 	  <tr><td> Country:</td><td><?php echo $country; ?></td></tr>
 	  <tr><td> City:</td><td><?php echo $city; ?></td></tr><br><br>	  
-	  <tr><td> Ticket #:</td><td><IMG src= https://www.barcodesinc.com/generator_files/image.php?code=<?php echo $barcode; ?>&style=197&type=C128B&width=200&height=50&xres=1&font=3></td></tr>
+	  <tr><td> Ticket #:</td><td><IMG src= https://www.barcodesinc.com/generator_files/image.php?code=<?php echo $barcode; ?>&style=197&type=C128B&width=200&height=50&xres=1&font=3'></td></tr>
 	  
 	  </table></form>
 	  
@@ -149,22 +140,25 @@ function openTab(evt, tabName) {
 	
 	
 	<div class="update">
-	<form name="updatebalance" action="" onsubmit="return validateForm()" method="post" >
+	<form  action="update_balance.php" method="POST" >
 <table width="45%" border="0" align="left" cellpadding="10" cellspacing="0"  >
   <tr>
     <td colspan="2">
 		<div align="left">
-		<h3>  </h3>
+		
                     <h3>UPDATE YOUR EVENT-BALANCE HERE</h3>
-					<h3>Your current balance is: </h3>	
-                    <h4>Available options are PayPal and IDeal.</h4>  
+					<h4>Note that you can NOT update your balance before buying the ticket. Updating your balance is necessary to book your camping 
+(one person books for everyone on same campingspot) and it will save time getting started on the event (buying food, lending items etc).</h4>
+					<h3>Your current balance is: </h3><?php echo $balance?>  Euros	
+                    <h4>Available options are PayPal and IDeal.</h4> 
+					
 				
 	    </div>
     </td>
   </tr>
 
   <tr>
-    <td><div align="left">Update balance with (eur):</div></td>
+    <td><div align="left">Update balance with (Euro):</div></td>
     <td><input type="text" name="balance" /></td>
   </tr>
   
@@ -174,7 +168,7 @@ function openTab(evt, tabName) {
 	<input type="radio" name="payment" value="paypal" checked> PayPal<br>
   <input type="radio" name="payment" value="ideal"> IDeal<br>
   </td>
-  </tr>
+  
   
   <tr>
     <td><div align="left"></div></td>
@@ -194,9 +188,9 @@ function openTab(evt, tabName) {
   <tr>
     <td colspan="2">
 		<div align="left">
-		<h2>Buy your ticket here! </h2>	<br>
-                    <h3>Ticket price: 60 eur for whole event.</h3>
-                    <h4>More information available at <a href="info.php">Info</a></h4>  
+		<h3>Buy your ticket here! </h3>	<br>
+        <h3>Ticket price: 60 euro for the whole event.</h3>
+        <h4>More information available at <a href="info.php">Info</a></h4>  
 				
 	    </div>
     </td>
@@ -212,7 +206,7 @@ function openTab(evt, tabName) {
   
   <tr>
     <td><div align="left"></div></td>
-    <td><input name="buyticket" type="submit" value="Buy ticket" /></td>
+    <td><input name="buyticket" type="submit" value="Continue buying ticket" /></td>
   </tr>
 </table>
 </form></div>
@@ -226,68 +220,34 @@ function openTab(evt, tabName) {
     <td colspan="2">
 		<div align="center">
 		<h2>You have booked your ticket! </h2>	<br>
-		<h4>We will send you confirmation on your e-mail!<br>
-		When coming to the event, you are obliged to show the confirmation at the gates - you will receive a bracelet at the entrance.</h4>
-		
-		
-              	
-            <IMG src= https://www.barcodesinc.com/generator_files/image.php?code=<?php echo $barcode; ?>&style=197&type=C128B&width=200&height=50&xres=1&font=3></IMG>
-                    <a href="" download></a>
+		<p>When you come to the event, you have to bring the confirmation with you. It means you must show your 
+		"User info" page with barcode and other information at the gates (printed page, screenshot on device, or straight from the page). You will receive a bracelet which will be used throughout the event. </h4>
+		<br>
+		<h4>It is your own responsibility to keep your barcode and confirmation page safe from being used/duplicated by other people! </p><br><br>
+		              	
+			<IMG src= https://www.barcodesinc.com/generator_files/image.php?code=<?php echo $barcode; ?>&style=197&type=C128B&width=200&height=50&xres=1&font=3'>
+				
 	    </div>
 		</tr>
     
 </table>
 </form>
-</div></div>
-  
-  
-<!--<div class="account">
-<form name="updatebalance" action="" onsubmit="return validateForm()" method="post" >
-<table width="80%" border="0" align="left" cellpadding="10" cellspacing="0"  >
-  <tr>
-    <td colspan="2">
-		<div align="center">
-		<h3>Your current balance is: </h3>	<br>
-                    <h3>UPDATE YOUR EVENT-BALANCE HERE</h3>
-                    <h4>Available options are PayPal and IDeal.</h4>  
-				
-	    </div>
-    </td>
-  </tr>
+</div></div>  
 
-  <tr>
-    <td><div align="right">Update balance with (eur):</div></td>
-    <td><input type="text" name="balance" /></td>
-  </tr>
-  
-  <tr>
-    <td><div align="right">Choose payment method:</div></td>
-    <td>
-	<input type="radio" name="payment" value="paypal" checked> PayPal<br>
-  <input type="radio" name="payment" value="ideal"> IDeal<br>
-  </td>
-  </tr>
-  
-  <tr>
-    <td><div align="right"></div></td>
-    <td><input name="update" type="submit" value="Update Balance" /></td>
-  </tr>
-</table>
-</form></div>-->
 
 
 
 <div class="tabcontent" id="camping">
 <div class="selectcamping" id="selectcamping">
-<form name="selectcamping" action="" onsubmit="return validateForm()" method="post" >
+<form name="selectcamping" action="selectcamping.php" onsubmit="return validateForm()" method="post" >
 <table width="50%" border="0" align="left" cellpadding="10" cellspacing="0"  >
   <tr>
     <td colspan="2">
 		<div align="left">
 		<h3>Choose your campingspot! </h3>	<br>
                     <h3>Maximum amount of people for one campingspot is 6.</h3>
-                    <h4>Price is 30 eur for campingspot and 20 eur per every person. <br>
-					All users must be previously registered. Tents etc are not provided by us.</h4>  
+                    <h4>Price is 30 euro for camping spot and 20 euro for every additional person. <br>
+					All users must be previously registered and have bought a ticket. Tents etc. are not provided by us.</h4>  
 				
 	    </div>
     </td>
@@ -295,18 +255,28 @@ function openTab(evt, tabName) {
 
    <tr>
     <td><div>Select campingspot:</div></td>
-    <td><input type="number" name="noofpeople" min="1" /></td>
-  </tr>
+    <td><select name="formSpot">
+		<?php 
+		$sql = mysqli_query($con,"SELECT campingspot_nr FROM campingspot WHERE nr_of_members=0");
+		while ($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+		echo "<option value=" . $row['campingspot_nr'] . ">" . $row['campingspot_nr'] . "</option>";
+		}
+		?>
+	</select></td>
+	</tr>
+	
+	
   
   
   <tr>
-    <td><div align="left">Add other members <br> who belong to <br> the campinspot:</div></td>
+    <td><div align="left">Add other members <br> who belong to <br> the camping spot:</div></td>
     <td>
-	<input type="text" name="member1" placeholder="member1" /><br><br>
-	<input type="text" name="member2" placeholder="member2"/><br><br>
-	<input type="text" name="member3" placeholder="member3"/><br><br>
-	<input type="text" name="member4" placeholder="member4"/><br><br>
-	<input type="text" name="member5" placeholder="member5"/><br><br>
+	<input type="text" name="member1" value="<?php echo $dbemail; ?>" readonly /><br><br>
+	<input type="text" name="member2" placeholder="member 2"/><br><br>
+	<input type="text" name="member3" placeholder="member 3"/><br><br>
+	<input type="text" name="member4" placeholder="member 4"/><br><br>
+	<input type="text" name="member5" placeholder="member 5"/><br><br>
+	<input type="text" name="member6" placeholder="member 6"/><br><br>
   </td>
   </tr>
   
@@ -333,13 +303,66 @@ function openTab(evt, tabName) {
   <tr>
     <td colspan="2">
 		<div align="center">
-		<h3>You have booked your campingspot! </h3>	<br>
-                    <h3>Number of people you wanted to share your campingspot</h3>
+		
+		<?php 
+		$sql = mysqli_query($con,"SELECT CAMPINGSPOT_campingspot_nr FROM campingspot_member WHERE PAID_VISITOR_REGISTERED_USER_email='$dbemail'");
+		while ($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+			$campnumber = $row['CAMPINGSPOT_campingspot_nr'];
+			
+		$sql = mysqli_query($con,"SELECT nr_of_members FROM campingspot WHERE campingspot_nr ='$campnumber'");
+		while ($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+			$membernumber = $row['nr_of_members'];
+		
+		$sql = mysqli_query($con,"SELECT PAID_VISITOR_REGISTERED_USER_email FROM campingspot_member WHERE CAMPINGSPOT_campingspot_nr ='$campnumber'");
+		while ($row = mysqli_fetch_array($sql, MYSQLI_ASSOC)){
+			$members = $row['PAID_VISITOR_REGISTERED_USER_email'];
+			
+		
+		
+			
+			
+		
+		}
+		}
+		}
+		
+		?>
+		
+		<table width="80%" border="0" align="center" cellpadding="10" cellspacing="0"  >
+  <tr>
+    <td colspan="2">
+		<div align="center">
+                    <h3>CAMPINGSPOT INFORMATION</h3>   
+<p>At the entrance you will receive a bracelet which will allow you to enter campingarea.</p>					
+        </div>
+		
+    </td>
+  </tr>
+
+  <tr>
+    <td><div align="left">Number of people in campingspot (incl You):</div></td>
+    <td><?php echo $membernumber?></td>
+  </tr>
+
+  <tr>
+    <td><div align="left">Campingspot number:</div></td>
+    <td><?php echo $campnumber ?></td>
+  </tr>
+  <tr>
+  <td>Your camping members are:</td>
+  <td><?php foreach ($sql as $row) 
+        { 
+            foreach ($row as $members)
+            {
+                echo $members."<br>";
+            }
+        } ?></td>
+  </tr>
+		
+	 
               	
 	    </div>
-<tr><ul>
-<td><li></li></td>
-</ul>		</tr>
+
     
 </table>
 </form>
@@ -352,9 +375,11 @@ function openTab(evt, tabName) {
 	
 		
 </body>
+
 </html>
+
 <?php
   } else header("Location: Index.php");  
   
 		  
-  ?>
+?>

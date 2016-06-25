@@ -18,5 +18,7 @@
         <div class="preview" align="center">
             <img id="preview" src="pic1.jpg" alt=""/>
         </div></center></div></div></body>
+		 <div class="foot" align="right">
+  <?php include_once("footer.php");?></div>
 
 

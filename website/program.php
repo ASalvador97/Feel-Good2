@@ -2,7 +2,7 @@
 <?php include_once("header.php");?>
 <div class="general"><center>
     <ul class="program">
-        <li><h2>24TH OF JUNE</h2></li>
+        <li><h2>26TH OF AUGUST</h2></li>
         <li>Doors open at 17.00</li>
         
         <li><h4>MAIN STAGE</h4></li>
@@ -20,7 +20,7 @@
     </ul>
     
         <ul class="program" >
-        <li><h2>25TH OF JUNE</h2></li>
+        <li><h2>27TH OF AUGUST</h2></li>
         
         <li><h4>MAIN STAGE</h4></li>
         <div align="left">
@@ -40,7 +40,7 @@
     </ul>
     
     <ul class="program">
-        <li><h2>26TH OF JUNE</h2></li>
+        <li><h2>28TH OF AUGUST</h2></li>
         
         <li><h4>MAIN STAGE</h4></li>
         <div align="left">
@@ -62,5 +62,6 @@
             need to pack your campingspot and leave.</li>
     </ul></center>
 </div>
-        
+         <div class="foot" align="right">
+  <?php include_once("footer.php");?></div>
 

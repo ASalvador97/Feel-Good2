@@ -37,3 +37,9 @@ C:\Users\kivistik.liis\Documents\ProP\ProP-app-evententrance\ProP-app-evententra
 C:\Users\kivistik.liis\Documents\ProP\Github project\Feel-Good2\ProP-app-evententrance\ProP-app-entrance\bin\Debug\ProP-app-entrance.exe.config
 C:\Users\kivistik.liis\Documents\ProP\Github project\Feel-Good2\ProP-app-evententrance\ProP-app-entrance\obj\Debug\ProP-app-entrance.exe
 C:\Users\kivistik.liis\Documents\ProP\Github project\Feel-Good2\ProP-app-evententrance\ProP-app-entrance\obj\Debug\ProP-app-entrance.pdb
+C:\Users\kivistik.liis\Documents\ProP\Github project\Feel-Good2\ProP-app-evententrance\ProP-app-entrance\bin\Debug\ProP-app-entrance.exe
+C:\Users\kivistik.liis\Documents\ProP\Github project\Feel-Good2\ProP-app-evententrance\ProP-app-entrance\bin\Debug\ProP-app-entrance.pdb
+C:\Users\kivistik.liis\Documents\ProP\Github project\Feel-Good2\ProP-app-evententrance\ProP-app-entrance\obj\Debug\ProP-app-entrance.csprojResolveAssemblyReference.cache
+C:\Users\kivistik.liis\Documents\ProP\Github project\Feel-Good2\ProP-app-evententrance\ProP-app-entrance\obj\Debug\ProP_app_entrance.Form1.resources
+C:\Users\kivistik.liis\Documents\ProP\Github project\Feel-Good2\ProP-app-evententrance\ProP-app-entrance\obj\Debug\ProP_app_entrance.Properties.Resources.resources
+C:\Users\kivistik.liis\Documents\ProP\Github project\Feel-Good2\ProP-app-evententrance\ProP-app-entrance\obj\Debug\ProP-app-entrance.csproj.GenerateResource.Cache

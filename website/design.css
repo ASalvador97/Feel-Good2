@@ -269,6 +269,13 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 	visibility: visible;
 }
  
+ .foot {position:fixed;bottom:3%;left:0;right:1%;height:30px;
+	 
+ }
+ .foot p, a, a:hover {
+	 color: beige; 
+	 font-family: Century Gothic, sans-serif;
+ }
 
 
 /*.rotate90{

@@ -41,5 +41,7 @@
 </form>
         </center>   </div>
     </div>
-</div>
+<div class="foot" align="right">
+ <?php include_once("footer.php");?>
+ </div>
    

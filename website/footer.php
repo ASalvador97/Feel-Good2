@@ -1,8 +1,6 @@
-<?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<footer>
+
+<p>Visit us on Twitter: <br><a target="_blank" href="https://twitter.com/search?q=%23FeelGood&src=typd">#FeelGood</p>
+</footer>
 

@@ -21,7 +21,6 @@ namespace ProP_app_entrance
         {
             mydatahelper = new DataHelper();
             InitializeComponent();
-
             try
             {
                 myRFIDReader = new RFID();
@@ -31,10 +30,10 @@ namespace ProP_app_entrance
                 myRFIDReader.waitForAttachment(3000);
                 myRFIDReader.Antenna = true;
                 myRFIDReader.LED = true;
-                lbtag.Text= "READY TO GO";
+                lbtag.Text = "READY TO GO";
             }
             catch (PhidgetException) { lbtag.Text = "ERROR AT STARTUP"; }
-
+           
         }
 
         private void ProcessThisTag(object sender, TagEventArgs e)
@@ -100,6 +99,12 @@ namespace ProP_app_entrance
                 {
                     this.lbtag.Text = "WRONG BARCODE";
                     this.panel1.BackColor = Color.Red;
+                    this.lbEmail.Text = "-";
+                    this.lbName.Text = "-";
+                    this.lbphone.Text = "-";
+                    this.lbBracelet.Text = "-";
+                    this.lbCamping.Text = "-";
+                    this.lbbarcode.Text = "-";
                 }
             }
            
@@ -129,14 +134,18 @@ namespace ProP_app_entrance
             {
                 this.panel1.BackColor = Color.Lavender;
                 this.lbBracelet.Text = tbBraceletCode.Text;
+                this.lbtag.Text = "SUCCESS";
             }
             else
             {
                 this.panel1.BackColor = Color.IndianRed;
+                this.lbtag.Text = "ERROR";
             }
 
 
         }
+
+       
 
 
         

@@ -5,7 +5,7 @@
     <div class="home">
         <br>
         <h1>FEELGOOD EVENT</h1>
-    <h2>24TH - 26TH OF JUNE 2016</h2>
+    <h2>26TH - 28TH OF AUGUST 2016</h2>
     <h2> NEAR "PARK KUIERPAD"</h2> 
         <div class=gettickets><h3>DON'T MISS OUT AND GET THE TICKETS <a href=tickets.php>HERE</a> NOW!</h3></div></div>
         
@@ -37,6 +37,8 @@
              <li><h4>Lil Lily</h4></li>
          </ul></div>
 </div>
+ <div class="foot" align="right">
+  <?php include_once("footer.php");?></div>
         
 
 
