@@ -68,11 +68,7 @@ namespace StatusApp
         {//The method that will handle the event of a processed tag will take place
             this.DisplayingPersonalData(e.Tag);
         }
-        private void btnLoadAllStudents_Click(object sender, EventArgs e)
-        {//In case there is a problem with reading the chip id, information regarding the visitor will be displayed manually
-            this.DisplayingPersonalData(tbemail.Text);
-        }
-        public void DisplayingPersonalData(String code)
+            public void DisplayingPersonalData(String code)
         {//Display all the information regarding the scanned visitor
             try
             {

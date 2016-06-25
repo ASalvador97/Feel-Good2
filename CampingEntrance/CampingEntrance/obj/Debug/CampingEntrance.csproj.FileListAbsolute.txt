@@ -8,3 +8,11 @@ E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\bin\Debug\MySql.Da
 E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\bin\Debug\Phidget21.NET.dll
 E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.exe
 E:\Fontys\Csharp\Block4\week5\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.pdb
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.exe
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.pdb
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\CampingEntrance\CampingEntrance\bin\Debug\CampingEntrance.exe
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\CampingEntrance\CampingEntrance\bin\Debug\CampingEntrance.pdb
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.csprojResolveAssemblyReference.cache
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.Form1.resources
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.Properties.Resources.resources
+C:\Users\Alexandru\Documents\GitHub\Feel-Good2\CampingEntrance\CampingEntrance\obj\Debug\CampingEntrance.csproj.GenerateResource.Cache

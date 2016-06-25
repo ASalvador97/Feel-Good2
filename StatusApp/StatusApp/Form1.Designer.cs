@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.menu = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbtotal = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tbnotentered = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tbemail = new System.Windows.Forms.TextBox();
-            this.btnLoadAllStudents = new System.Windows.Forms.Button();
             this.listboxStatusAndHistory = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tbspot = new System.Windows.Forms.TextBox();
@@ -77,8 +77,6 @@
             this.tbrevenue = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbtotal = new System.Windows.Forms.TextBox();
             this.menu.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -122,6 +120,24 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tbtotal
+            // 
+            this.tbtotal.Location = new System.Drawing.Point(601, 388);
+            this.tbtotal.Name = "tbtotal";
+            this.tbtotal.Size = new System.Drawing.Size(121, 26);
+            this.tbtotal.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(-5, 384);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(607, 29);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "The total profit (tickets, camping spots, shops/lendings):";
             // 
             // tbnotentered
             // 
@@ -245,8 +261,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.tbemail);
-            this.tabPage2.Controls.Add(this.btnLoadAllStudents);
             this.tabPage2.Controls.Add(this.listboxStatusAndHistory);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
@@ -256,32 +270,12 @@
             this.tabPage2.Text = "Client Info";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tbemail
-            // 
-            this.tbemail.Location = new System.Drawing.Point(44, 47);
-            this.tbemail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbemail.Name = "tbemail";
-            this.tbemail.Size = new System.Drawing.Size(134, 26);
-            this.tbemail.TabIndex = 9;
-            // 
-            // btnLoadAllStudents
-            // 
-            this.btnLoadAllStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadAllStudents.Location = new System.Drawing.Point(43, 107);
-            this.btnLoadAllStudents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnLoadAllStudents.Name = "btnLoadAllStudents";
-            this.btnLoadAllStudents.Size = new System.Drawing.Size(135, 124);
-            this.btnLoadAllStudents.TabIndex = 11;
-            this.btnLoadAllStudents.Text = "Load Visitor info";
-            this.btnLoadAllStudents.UseVisualStyleBackColor = true;
-            this.btnLoadAllStudents.Click += new System.EventHandler(this.btnLoadAllStudents_Click);
-            // 
             // listboxStatusAndHistory
             // 
             this.listboxStatusAndHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listboxStatusAndHistory.FormattingEnabled = true;
             this.listboxStatusAndHistory.ItemHeight = 29;
-            this.listboxStatusAndHistory.Location = new System.Drawing.Point(247, 22);
+            this.listboxStatusAndHistory.Location = new System.Drawing.Point(142, 22);
             this.listboxStatusAndHistory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listboxStatusAndHistory.Name = "listboxStatusAndHistory";
             this.listboxStatusAndHistory.Size = new System.Drawing.Size(458, 468);
@@ -588,24 +582,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 395);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(599, 29);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "The total profit (tickets, camping spots, shops/lendings:";
-            // 
-            // tbtotal
-            // 
-            this.tbtotal.Location = new System.Drawing.Point(601, 399);
-            this.tbtotal.Name = "tbtotal";
-            this.tbtotal.Size = new System.Drawing.Size(121, 26);
-            this.tbtotal.TabIndex = 27;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -618,7 +594,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -647,8 +622,6 @@
         private System.Windows.Forms.TextBox tbnotentered;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbemail;
-        private System.Windows.Forms.Button btnLoadAllStudents;
         private System.Windows.Forms.ListBox listboxStatusAndHistory;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label11;
