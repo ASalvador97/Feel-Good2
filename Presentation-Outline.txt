@@ -1,0 +1,26 @@
+The team - who we are
+Linnh was chosen as leader. Client is Mr.George- mention often
+
+Meeting with george. FeelGood because its the best for the young audience today - they like music and like to feel good
+
+
+Important decisions
+
+
+Made up rules. 
+
+We decided to generate barcodes, then attach a RFID bracelet at the gate using an app. 
+Fabric unremovable colored bracelets to differentiate between regular and camping visitor. Camping is green, regular is blue.
+
+
+Present Website (Liis),
+Present signing up, signing in, buying a ticket, selecting spot (Alex S.)
+Open status app forever
+Entrance (Liis) specidy no barcode
+Camping entrance (Alex P.)
+Buy and lend stuff (Linh)
+Paypal App (Alex P.)
+Leaving App (Liis)
+
+
+Benefits- Simple design, clear GUI's and gets the job done in the easiest way. 

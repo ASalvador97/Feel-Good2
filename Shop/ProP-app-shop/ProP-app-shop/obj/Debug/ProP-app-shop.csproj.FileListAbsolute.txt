@@ -1,0 +1,27 @@
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\ProP-app-shop.exe.config
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\ProP-app-shop.exe
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\ProP-app-shop.pdb
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.csprojResolveAssemblyReference.cache
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP_app_shop.Form1.resources
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP_app_shop.Properties.Resources.resources
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.csproj.GenerateResource.Cache
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.exe
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.pdb
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\ProP-app-shop.exe.config
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.exe
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\Block 3\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.pdb
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\ProP-app-shop.exe.config
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.exe
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.pdb
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\ProP-app-shop.exe
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\ProP-app-shop.pdb
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.csprojResolveAssemblyReference.cache
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP_app_shop.Form1.resources
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP_app_shop.Properties.Resources.resources
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.csproj.GenerateResource.Cache
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\MySql.Data.dll
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\Phidget21.NET.dll
+C:\Users\Achlys\Dropbox\Study\ICT course\My study\ProP (block 3 + 4)\Applications\ProP-app-shop\ProP-app-shop\bin\Debug\Phidget21.NET.xml
+D:\PROP\Shop\ProP-app-shop\ProP-app-shop\bin\Debug\ProP-app-shop.exe.config
+D:\PROP\Shop\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.exe
+D:\PROP\Shop\ProP-app-shop\ProP-app-shop\obj\Debug\ProP-app-shop.pdb
