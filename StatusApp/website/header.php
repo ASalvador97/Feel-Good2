@@ -5,6 +5,7 @@
 <?php 
 require_once 'psl-config.php'?>
 <title>FeelGood Event</title>
+<link rel="shortcut icon" href="icon.jpg">
 </head>
 <body>
 <div class="nav">

@@ -246,8 +246,9 @@ function openTab(evt, tabName) {
 		<div align="left">
 		<h3>Choose your campingspot! </h3>	<br>
                     <h3>Maximum amount of people for one campingspot is 6.</h3>
-                    <h4>Price is 30 euro for camping spot and 20 euro for every additional person. <br>
-					All users must be previously registered and have bought a ticket. Tents etc. are not provided by us.</h4>  
+                    <p>Price is 30 euro for camping spot and 20 euro for every additional person. <br>
+					All users must be previously registered and have bought a ticket. Tents etc. are not provided by us.</p>  <br>
+					<p>PLEASE UPDATE YOUR BALANCE BEFORE BOOKING YOUR CAMPING!</p>
 				
 	    </div>
     </td>
